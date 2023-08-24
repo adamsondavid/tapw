@@ -1,5 +1,5 @@
 import app from "../api";
-import {contract} from "../src/common/contract";
+import { contract } from "../src/common/contract";
 import ViteExpress from "vite-express";
 import { generateOpenApi } from "@ts-rest/open-api";
 import * as swaggerUi from "swagger-ui-express";
