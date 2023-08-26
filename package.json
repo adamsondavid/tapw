@@ -7,8 +7,7 @@
   "scripts": {
     "dev": "nodemon --watch src/backend/**/* scripts/dev.ts",
     "lint": "prettier --ignore-path .gitignore --check .",
-    "typecheck": "tsc --noEmit",
-    "build": "vite build"
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@ts-rest/core": "^3.28.0",
