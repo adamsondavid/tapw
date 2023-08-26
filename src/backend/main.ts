@@ -1,8 +1,14 @@
-import { initServer } from "@ts-rest/express";
+import express from "express";
+import { initServer, createExpressEndpoints } from "@ts-rest/express";
 import { contract } from "../common/contract";
 
-export const router = initServer().router(contract, {
+const router = initServer().router(contract, {
   async greet({ params }) {
     return { status: 200, body: `Hello ${params.name}` };
   },
 });
+
+export const app = express()
+  .use(express.urlencoded({ extended: false }))
+  .use(express.json());
+createExpressEndpoints(contract, router, app);
