@@ -1,3 +1,3 @@
-# ts-rest-fullstack-demo
+# tapw
 
-This is just a simple demo that shows how to use ts-rest with express.js and vite (of course using a framework that supports ssr would be better suited for prod).
+A simple tempalte for scaffolding fullstack applications with ts-rest & vue that can be deployed to vercel or via docker image
