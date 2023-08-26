@@ -1,4 +1,4 @@
-name: Build
+name: Lint
 
 on:
   push:
@@ -14,5 +14,5 @@ jobs:
           node-version: 18.x
       - name: Install Dependencies
         run: npm ci
-      - name: Build
-        run: npm run build
+      - name: Lint
+        run: npm run lint
