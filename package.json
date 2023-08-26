@@ -5,7 +5,7 @@
   "author": "David Adamson",
   "type": "commonjs",
   "scripts": {
-    "dev": "nodemon --watch src/backend/**/* scripts/dev.ts",
+    "dev": "nodemon --ignore src/frontend/**/* src/main.dev.ts",
     "lint": "prettier --ignore-path .gitignore --check .",
     "typecheck": "tsc --noEmit"
   },
