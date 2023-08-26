@@ -16,4 +16,6 @@ app.use(
     ),
   ),
 );
-ViteExpress.listen(app, 5173, () => console.log("dev server running on http://localhost:5173"));
+ViteExpress.listen(app, 5173, () =>
+  console.log("dev server running on http://localhost:5173"),
+);
