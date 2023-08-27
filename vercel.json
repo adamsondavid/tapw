@@ -4,6 +4,8 @@
     { "source": "/(.*)", "destination": "/" }
   ],
   "functions": {
-    "sapi/index.ts": {}
+    "sapi/index.ts": {
+      "memory": 1024
+    }
   }
 }
