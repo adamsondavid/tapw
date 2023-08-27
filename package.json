@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "nodemon --ignore src/client/**/* src/main.dev.ts",
     "lint": "prettier --ignore-path .gitignore --check .",
-    "check": "tsc --noEmit"
+    "check": "vue-tsc --noEmit"
   },
   "dependencies": {
     "@ts-rest/core": "^3.28.0",
@@ -28,6 +28,7 @@
     "ts-node": "^10.9.1",
     "typescript": "^5.0.2",
     "vite": "^4.4.5",
-    "vite-express": "^0.10.0"
+    "vite-express": "^0.10.0",
+    "vue-tsc": "^1.8.8"
   }
 }
