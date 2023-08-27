@@ -3,7 +3,7 @@ import ViteExpress from "vite-express";
 import { generateOpenApi } from "@ts-rest/open-api";
 import * as swaggerUi from "swagger-ui-express";
 import { name, version } from "../package.json";
-import app from "./api/main";
+import {app} from "./server/main";
 
 app.use(
   "/api",
