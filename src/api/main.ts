@@ -8,7 +8,8 @@ const router = initServer().router(contract, {
   },
 });
 
-export const app = express()
+const app = express()
   .use(express.urlencoded({ extended: false }))
   .use(express.json());
 createExpressEndpoints(contract, router, app);
+export default app;

@@ -5,9 +5,9 @@
   "author": "David Adamson",
   "type": "commonjs",
   "scripts": {
-    "dev": "nodemon --ignore src/frontend/**/* src/main.dev.ts",
+    "dev": "nodemon --ignore src/client/**/* src/main.dev.ts",
     "lint": "prettier --ignore-path .gitignore --check .",
-    "build": "tsc && vite build"
+    "build": "vite build --outDir .tapw/api --ssr src/api/main.ts"
   },
   "dependencies": {
     "@ts-rest/core": "^3.28.0",
