@@ -2,10 +2,5 @@
   "rewrites": [
     { "source": "/api/(.*)", "destination": "/api" },
     { "source": "/(.*)", "destination": "/" }
-  ],
-  "functions": {
-    "sapi/index.ts": {
-      "memory": 1024
-    }
-  }
+  ]
 }
