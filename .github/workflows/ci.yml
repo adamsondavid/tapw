@@ -19,6 +19,15 @@ jobs:
       - uses: cypress-io/github-action@v5
         with:
           start: npm run dev
+      - uses: actions/upload-artifact@v3
+        with:
+          path: cypress/videos
+          retention-days: 1
+      - uses: actions/upload-artifact@v3
+        with:
+          path: cypress/screenshots
+          retention-days: 1
+
   check:
     runs-on: ubuntu-latest
     steps:
