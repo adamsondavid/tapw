@@ -8,14 +8,6 @@ import { app } from "./server/main";
 app.use(
   "/api",
   swaggerUi.serve,
-  swaggerUi.setup(
-    generateOpenApi(
-      contract,
-      { info: { title: name, version } },
-      { setOperationId: true },
-    ),
-  ),
+  swaggerUi.setup(generateOpenApi(contract, { info: { title: name, version } }, { setOperationId: true })),
 );
-ViteExpress.listen(app, 5173, () =>
-  console.log("dev server listening on\nhttp://localhost:5173"),
-);
+ViteExpress.listen(app, 5173, () => console.log("dev server listening on\nhttp://localhost:5173"));
