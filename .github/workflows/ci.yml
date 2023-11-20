@@ -1,5 +1,7 @@
 on:
   push:
+    branches:
+      - master
   pull_request:
 
 jobs:
@@ -29,7 +31,6 @@ jobs:
         with:
           path: cypress/screenshots
           retention-days: 1
-
   check:
     runs-on: ubuntu-latest
     steps:
