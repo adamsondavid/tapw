@@ -1,3 +1,4 @@
+import { initServer } from "@ts-rest/express";
 import { contract } from "../common/contract";
 
 export function initRouter() {
