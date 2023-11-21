@@ -16,7 +16,7 @@ export function initServer() {
       app.provide(SERVER, server);
     },
   };
-};
+}
 
 export function useServer(): typeof server {
   return inject(SERVER)!;
