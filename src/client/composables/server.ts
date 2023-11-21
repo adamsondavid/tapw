@@ -7,9 +7,10 @@ const server = initClient(contract, {
   baseUrl: "",
   baseHeaders: {},
   throwOnUnknownStatus: true,
+  jsonQuery: true,
 });
 
-export const initServer = () => {
+export function initServer() {
   return {
     install(app: ReturnType<typeof createApp>) {
       app.provide(SERVER, server);
