@@ -1,4 +1,5 @@
 import express from "express";
+import { z } from "zod";
 import { initServer, createExpressEndpoints } from "@ts-rest/express";
 import { contract } from "../common/contract";
 import { initRouter } from "./router";
