@@ -1,3 +1,3 @@
-# tapw
+# Tap Water
 
-Template for scaffolding fullstack applications with express, vue and e2e typesafety that can easily be deployed to vercel.
+Build fullstack Vue & Express apps with e2e typesafety in mind. Deploy to Vercel within seconds.
