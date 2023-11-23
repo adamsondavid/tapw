@@ -2,12 +2,12 @@ import "./main.css";
 import { createApp } from "vue";
 import App from "./app.vue";
 import { createRouter, createWebHistory } from "vue-router";
-import Home from "./pages/home.vue";
+import HomePage from "./pages/home-page.vue";
 
 const router = createRouter({
   history: createWebHistory(),
   routes: [
-    { path: "/", component: Home },
+    { path: "/", component: HomePage },
     { path: "/:path(.*)*", redirect: "/" },
   ],
 });
