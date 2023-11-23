@@ -26,7 +26,7 @@ const openGitHub = () => window.open("https://github.com/adamsondavid/tapw");
         <h1 class="inline-block bg-gradient-to-r from-blue-900 to-blue-500 bg-clip-text text-transparent">
           Tap Water.
         </h1>
-        <p>Build fullstack Vue & Express apps with e2e typesafety in mind.</p>
+        <p>Build fullstack Vue & Express apps with e2e typesafety in mind. Deploy to Vercel within seconds.</p>
       </div>
       <div class="flex gap-2 py-6">
         <button
