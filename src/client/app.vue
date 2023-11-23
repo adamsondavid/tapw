@@ -5,7 +5,6 @@ import { useServer } from "./composables/server";
 const server = useServer();
 
 const names = ["Tap Water", "Vue", "Express", "ts-rest", "Tailwind", "Cypress", "e2e Typesafety"];
-const showDialog = ref(false);
 const greeting = ref("");
 const callServer = async () => {
   const name = names.shift()!;
@@ -13,7 +12,6 @@ const callServer = async () => {
   const { status, body } = await server.greet({ params: { name } });
   if (status === 200) greeting.value = body;
   else greeting.value = "some unexpected error occurred 😰";
-  showDialog.value = true;
 };
 
 const openGitHub = () => window.open("https://github.com/adamsondavid/tapw");
