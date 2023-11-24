@@ -45,7 +45,9 @@ const openGitHub = () => window.open("https://github.com/adamsondavid/tapw");
           :disabled="loading"
           data-cy="submit"
         >
-          <span v-if="loading"><Icon :icon="spinnerIcon" width="20" class="animate-spin" /></span>
+          <span v-if="loading" class="flex justify-center">
+            <Icon :icon="spinnerIcon" width="20" class="animate-spin" />
+          </span>
           <span v-else-if="greeting" class="font-mono" data-cy="greeting">{{ greeting }}</span>
           <span v-else>Demonstrate Typesafe Backendcall</span>
         </button>
