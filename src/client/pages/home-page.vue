@@ -28,11 +28,9 @@ const openGitHub = () => window.open("https://github.com/adamsondavid/tapw");
 </script>
 
 <template>
-  <div
-    class="flex min-h-full content-center items-center px-16 lg:px-32 xl:px-64 dark:bg-zinc-900 dark:text-white py-6"
-  >
-    <div class="flex flex-col gap-6">
-      <div class="text-2xl sm:text-4xl lg:text-5xl font-bold">
+  <div class="flex min-h-full justify-center items-center dark:bg-zinc-900 dark:text-white">
+    <div class="flex flex-col gap-6 w-10/12 sm:w-8/12 2xl:w-6/12 py-6">
+      <div class="text-3xl lg:text-6xl font-bold">
         <h1 class="inline-block bg-gradient-to-r from-blue-900 to-blue-500 bg-clip-text text-transparent">
           Tap Water.
         </h1>
