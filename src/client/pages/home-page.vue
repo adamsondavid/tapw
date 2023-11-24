@@ -3,17 +3,25 @@ import { ref } from "vue";
 import { useServer } from "../composables/server";
 import { Icon } from "@iconify/vue";
 import githubIcon from "@iconify-icons/uil/github";
+import spinnerIcon from "@iconify-icons/uil/spinner-alt";
 
 const server = useServer();
 
 const names = ["Tap Water", "Vue", "Express", "ts-rest", "Tailwind", "Cypress", "e2e Typesafety"];
-const greeting = ref("");
-const callServer = async () => {
+const getName = () => {
   const name = names.shift()!;
   names.push(name);
-  const { status, body } = await server.greet({ params: { name } });
+  return name;
+};
+
+const greeting = ref("");
+const loading = ref(false);
+const callServer = async () => {
+  loading.value = true;
+  const { status, body } = await server.greet({ params: { name: getName() } });
   if (status === 200) greeting.value = body;
   else greeting.value = "some unexpected error occurred 😰";
+  loading.value = false;
 };
 
 const openGitHub = () => window.open("https://github.com/adamsondavid/tapw");
@@ -21,22 +29,24 @@ const openGitHub = () => window.open("https://github.com/adamsondavid/tapw");
 
 <template>
   <div
-    class="flex min-h-screen content-center items-center px-16 lg:px-32 xl:px-64 dark:bg-zinc-900 dark:text-white py-6"
+    class="flex min-h-full content-center items-center px-16 lg:px-32 xl:px-64 dark:bg-zinc-900 dark:text-white py-6"
   >
     <div class="flex flex-col gap-6">
-      <div class="text-2xl md:text-3xl lg:text-6xl font-bold">
+      <div class="text-2xl sm:text-4xl lg:text-5xl font-bold">
         <h1 class="inline-block bg-gradient-to-r from-blue-900 to-blue-500 bg-clip-text text-transparent">
           Tap Water.
         </h1>
         <p>Build fullstack Vue & Express apps with e2e typesafety in mind. Deploy to Vercel within seconds.</p>
       </div>
-      <div class="flex gap-2">
+      <div class="flex gap-2 flex-col sm:flex-row">
         <button
           class="rounded-md bg-blue-500 px-4 py-2 text-sm text-white hover:bg-blue-700"
           @click="callServer"
+          :disabled="loading"
           data-cy="submit"
         >
-          <span v-if="greeting" class="font-mono" data-cy="greeting">{{ greeting }}</span>
+          <span v-if="loading"><Icon :icon="spinnerIcon" width="20" class="animate-spin" /></span>
+          <span v-else-if="greeting" class="font-mono" data-cy="greeting">{{ greeting }}</span>
           <span v-else>Demonstrate Typesafe Backendcall</span>
         </button>
         <button
