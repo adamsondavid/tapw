@@ -3,6 +3,7 @@ import type { Config } from "tailwindcss";
 import defaultTheme from "tailwindcss/defaultTheme";
 
 export default {
+  darkMode: "class",
   content: ["./index.html", "./src/client/**/*.{vue,js,ts}"],
   theme: {
     container: {

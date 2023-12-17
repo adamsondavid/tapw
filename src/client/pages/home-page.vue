@@ -4,6 +4,7 @@ import { useServer } from "../composables/server";
 import { Icon } from "@iconify/vue";
 import githubIcon from "@iconify-icons/uil/github";
 import spinnerIcon from "@iconify-icons/uil/spinner-alt";
+import { Button } from "@/client/components/ui/button";
 
 const server = useServer();
 
@@ -23,8 +24,6 @@ const callServer = async () => {
   else greeting.value = "some unexpected error occurred 😰";
   loading.value = false;
 };
-
-const openGitHub = () => window.open("https://github.com/adamsondavid/tapw");
 </script>
 
 <template>
@@ -37,26 +36,18 @@ const openGitHub = () => window.open("https://github.com/adamsondavid/tapw");
         <p>Build fullstack Vue & Express apps with e2e typesafety in mind. Deploy to Vercel within seconds.</p>
       </div>
       <div class="flex gap-2 flex-col sm:flex-row">
-        <button
-          class="rounded-md bg-blue-500 px-4 py-2 text-sm text-white hover:bg-blue-700"
-          @click="callServer"
-          :disabled="loading"
-          data-cy="submit"
-        >
+        <Button @click="callServer" :disabled="loading" data-cy="submit">
           <span v-if="loading" class="flex justify-center">
             <Icon :icon="spinnerIcon" width="20" class="animate-spin" />
           </span>
           <span v-else-if="greeting" class="font-mono" data-cy="greeting">{{ greeting }}</span>
           <span v-else>Demonstrate Typesafe Backendcall</span>
-        </button>
-        <button
-          class="rounded-md bg-gray-800 px-4 py-2 text-sm text-white hover:bg-gray-700 dark:hover:bg-gray-300 dark:bg-white dark:text-gray-800"
-          @click="openGitHub"
-        >
+        </Button>
+        <Button variant="ghost" as="a" href="https://github.com/adamsondavid/tapw" target="_blank">
           Use this Template on
           <Icon :icon="githubIcon" width="20" class="inline align-text-bottom" />
           <span class="font-bold">GitHub</span>
-        </button>
+        </Button>
       </div>
     </div>
   </div>
