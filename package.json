@@ -11,8 +11,7 @@
     "check": "vue-tsc --noEmit"
   },
   "engines": {
-    "node": "^18.19.0",
-    "npm": "^10.2.3"
+    "node": "^18.0.0"
   },
   "dependencies": {
     "@fontsource-variable/inter": "^5.0.16",
