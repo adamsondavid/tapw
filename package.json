@@ -11,18 +11,22 @@
     "check": "vue-tsc --noEmit"
   },
   "dependencies": {
+    "@fontsource-variable/inter": "^5.0.15",
+    "@fontsource-variable/jetbrains-mono": "^5.0.18",
+    "@iconify-icons/uil": "^1.2.3",
+    "@iconify/vue": "^4.1.1",
     "@ts-rest/core": "^3.28.0",
     "@ts-rest/express": "^3.30.5",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.0.0",
     "express": "^4.18.2",
+    "tailwind-merge": "^2.1.0",
+    "tailwindcss-animate": "^1.0.7",
     "vue": "^3.3.4",
     "vue-router": "^4.2.5",
     "zod": "^3.22.4"
   },
   "devDependencies": {
-    "@fontsource-variable/inter": "^5.0.15",
-    "@fontsource-variable/jetbrains-mono": "^5.0.18",
-    "@iconify-icons/uil": "^1.2.3",
-    "@iconify/vue": "^4.1.1",
     "@ts-rest/open-api": "^3.30.5",
     "@types/express": "^4.17.21",
     "@types/node": "^20.9.3",
