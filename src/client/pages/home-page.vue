@@ -27,7 +27,7 @@ const callServer = async () => {
 </script>
 
 <template>
-  <div class="flex min-h-full justify-center items-center dark:bg-zinc-900 dark:text-white">
+  <div class="flex min-h-full justify-center items-center">
     <div class="flex flex-col gap-6 w-10/12 sm:w-8/12 2xl:w-6/12 py-6">
       <div class="text-3xl lg:text-6xl font-bold">
         <h1 class="inline-block bg-gradient-to-r from-blue-900 to-blue-500 bg-clip-text text-transparent">
@@ -43,7 +43,7 @@ const callServer = async () => {
           <span v-else-if="greeting" class="font-mono" data-cy="greeting">{{ greeting }}</span>
           <span v-else>Demonstrate Typesafe Backendcall</span>
         </Button>
-        <Button variant="ghost" as="a" href="https://github.com/adamsondavid/tapw" target="_blank">
+        <Button variant="secondary" as="a" href="https://github.com/adamsondavid/tapw" target="_blank">
           Use this Template on
           <Icon :icon="githubIcon" width="20" class="inline align-text-bottom" />
           <span class="font-bold">GitHub</span>

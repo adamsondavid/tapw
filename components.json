@@ -1,12 +1,10 @@
 {
   "style": "new-york",
-  "typescript": true,
   "tailwind": {
     "config": "tailwind.config.ts",
     "css": "src/client/main.css",
-    "cssVariables": true
+    "baseColor": "slate"
   },
-  "framework": "vite",
   "aliases": {
     "components": "@/client/components",
     "utils": "@/client/lib/utils"
