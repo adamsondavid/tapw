@@ -49,7 +49,7 @@
     "tailwindcss": "^3.3.6",
     "tsx": "^4.7.0",
     "typescript": "^5.3.3",
-    "vite": "^5.0.10",
+    "vite": "^5.0.12",
     "vite-express": "^0.12.0",
     "vue-tsc": "^1.8.25"
   }
