@@ -51,6 +51,6 @@
     "typescript": "^5.3.3",
     "vite": "^5.0.12",
     "vite-express": "^0.15.0",
-    "vue-tsc": "^1.8.25"
+    "vue-tsc": "^1.8.27"
   }
 }
