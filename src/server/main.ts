@@ -1,13 +1,11 @@
-import express from "express";
 import { z } from "zod";
-import { createExpressEndpoints } from "@ts-rest/express";
-import { contract } from "../common/contract";
 import { initRouter } from "./router";
+import { Hono } from "hono";
+import { createHonoEndpoints } from "ts-rest-hono";
+import { contract } from "../common/contract";
 
 const env = z.object({}).parse(process.env);
 const router = initRouter();
 
-export const app = express()
-  .use(express.urlencoded({ extended: false }))
-  .use(express.json());
-createExpressEndpoints(contract, router, app, { responseValidation: true, jsonQuery: true });
+export const app = new Hono();
+createHonoEndpoints(contract, router, app);

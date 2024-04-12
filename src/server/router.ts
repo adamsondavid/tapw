@@ -1,5 +1,5 @@
-import { initServer } from "@ts-rest/express";
 import { contract } from "../common/contract";
+import { initServer } from "ts-rest-hono";
 
 export function initRouter() {
   return initServer().router(contract, {

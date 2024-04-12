@@ -1,2 +1,4 @@
 import { app } from "../src/server/main";
-export default app;
+
+export const config = { runtime: "edge" };
+export default (request: Request) => app.fetch(request);
