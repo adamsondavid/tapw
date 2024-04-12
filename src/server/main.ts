@@ -7,4 +7,4 @@ const env = z.object({}).parse(process.env);
 const router = initRouter();
 
 export const handler = (request: Request) =>
-  fetchRequestHandler({ request, contract, router, options: { responseValidation: true } });
+  fetchRequestHandler({ request, contract, router, options: { responseValidation: true, jsonQuery: true } });
