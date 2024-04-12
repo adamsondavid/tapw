@@ -1,12 +1,11 @@
 import { z } from "zod";
-import { contract } from "../common/contract";
 import { initRouter } from "./router";
-import { fetchRequestHandler } from "@ts-rest/serverless/fetch";
-import { Elysia } from "elysia";
+import { Hono } from "hono";
+import { createHonoEndpoints } from "ts-rest-hono";
+import { contract } from "@/common/contract";
 
 const env = z.object({}).parse(process.env);
 const router = initRouter();
 
-export const handler = new Elysia().mount((request) =>
-  fetchRequestHandler({ request, contract, router, options: { responseValidation: true, jsonQuery: true } }),
-).fetch;
+export const app = new Hono();
+createHonoEndpoints(contract, router, app);

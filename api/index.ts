@@ -1,4 +1,4 @@
-import { handler } from "../src/server/main";
+import { app } from "../src/server/main";
 
 export const config = { runtime: "edge" };
-export default handler;
+export default (request: Request) => app.fetch(request);

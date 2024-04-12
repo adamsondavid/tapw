@@ -1,12 +1,10 @@
 import { contract } from "../common/contract";
-import { RecursiveRouterObj } from "@ts-rest/serverless/src/lib/types";
-
-type Router = RecursiveRouterObj<typeof contract, {}, unknown>;
+import { initServer } from "ts-rest-hono";
 
 export function initRouter() {
-  return {
+  return initServer().router(contract, {
     async greet({ params }) {
       return { status: 200, body: `Hello ${params.name}` };
     },
-  } satisfies Router;
+  });
 }
