@@ -5,11 +5,10 @@ WORKDIR /build
 COPY package*.json .
 RUN npm ci --prefer-offline --no-audit
 COPY . .
-RUN npx vite build && npx esbuild src/main.docker.ts --bundle --platform=node --outfile=server.js
+RUN npm run build
 
 FROM node
 WORKDIR /app
 COPY --from=build /build/dist dist
-COPY --from=build /build/server.js .
 EXPOSE 80/tcp
-ENTRYPOINT ["node", "server.js"]
+ENTRYPOINT ["node", "dist/main.js"]
