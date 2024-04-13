@@ -5,22 +5,40 @@ on:
   pull_request:
 
 jobs:
-  lint:
+  check-types:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
-          node-version: 18.x
+          node-version: 20.x
       - run: npm ci
-      - run: npm run lint
-  test:
+      - run: npm run check:types
+  check-format:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
-          node-version: 18.x
+          node-version: 20.x
+      - run: npm ci
+      - run: npm run check:format
+  check-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 20.x
+      - run: npm ci
+      - run: npm run check:lint
+  test-e2e:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 20.x
       - uses: cypress-io/github-action@v5
         with:
           start: npm run dev
@@ -34,12 +52,3 @@ jobs:
         with:
           path: cypress/screenshots
           retention-days: 1
-  check:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 18.x
-      - run: npm ci
-      - run: npm run check
