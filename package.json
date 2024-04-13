@@ -12,8 +12,8 @@
     "test:e2e": "cypress run --browser chrome"
   },
   "engines": {
-    "node": ">=20.0.0 <21.0.0",
-    "npm": ">=10.0.0 <11.0.0"
+    "node": "20.x",
+    "npm": "10.x"
   },
   "dependencies": {
     "@fontsource-variable/inter": "^5.0.17",
