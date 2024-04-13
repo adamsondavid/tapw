@@ -4,7 +4,7 @@ import { useServer } from "../composables/server";
 import { Icon } from "@iconify/vue";
 import githubIcon from "@iconify-icons/uil/github";
 import spinnerIcon from "@iconify-icons/uil/spinner-alt";
-import { Button } from "@/client/components/ui/button";
+import { Button } from "../components/ui/button";
 
 const server = useServer();
 
@@ -33,7 +33,9 @@ const callServer = async () => {
         <h1 class="inline-block bg-gradient-to-r from-blue-900 to-blue-500 bg-clip-text text-transparent">
           Tap Water.
         </h1>
-        <p>Build fullstack Vue & Express apps with e2e typesafety in mind. Deploy to Vercel within seconds.</p>
+        <p>
+          Build fullstack Vue apps with e2e typesafety in mind. Deploy to Vercel Edge or Serverless within seconds 🚀
+        </p>
       </div>
       <div class="flex gap-2 flex-col sm:flex-row">
         <Button @click="callServer" :disabled="loading" data-cy="submit">
