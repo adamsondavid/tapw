@@ -10,7 +10,7 @@
     "check:format": "prettier --ignore-path .gitignore --check .",
     "check:lint": "eslint --ext .vue,.ts --ignore-path .gitignore .",
     "test:e2e": "cypress run --browser chrome",
-    "build": "npx vite build && npx esbuild src/main.prod.ts --bundle --platform=node --outfile=dist/main.js",
+    "build": "vite build && esbuild src/main.prod.ts --bundle --platform=node --outfile=dist/main.js",
     "start": "node dist/main.js"
   },
   "engines": {
