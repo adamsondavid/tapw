@@ -4,7 +4,7 @@ import { Hono } from "hono";
 import { createHonoEndpoints } from "ts-rest-hono";
 import { contract } from "../common/contract";
 
-// @ts-ignore
+// @ts-ignore // TODO
 const env = z.object({}).parse(Netlify.env.toObject());
 const router = initRouter();
 
