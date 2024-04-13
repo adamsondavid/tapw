@@ -8,4 +8,4 @@ const env = z.object({}).parse(process.env);
 const router = initRouter();
 
 export const app = new Hono();
-createHonoEndpoints(contract, router, app);
+createHonoEndpoints(contract, router, app, { logInitialization: false, jsonQuery: true, responseValidation: true });

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref, watch } from "vue";
 import { useServer } from "../composables/server";
 import { Icon } from "@iconify/vue";
 import githubIcon from "@iconify-icons/uil/github";
@@ -8,22 +8,23 @@ import { Button } from "../components/ui/button";
 
 const server = useServer();
 
-const names = ["Tap Water", "Vue", "Express", "ts-rest", "Tailwind", "Cypress", "e2e Typesafety"];
-const getName = () => {
-  const name = names.shift()!;
-  names.push(name);
-  return name;
-};
+const names = ["Tap Water", "Vue", "ts-rest", "Tailwind", "Cypress", "e2e Typesafety", "Vercel Edge"];
+const name = ref(-1);
 
 const greeting = ref("");
 const loading = ref(false);
-const callServer = async () => {
-  loading.value = true;
-  const { status, body } = await server.greet({ params: { name: getName() } });
-  if (status === 200) greeting.value = body;
-  else greeting.value = "some unexpected error occurred 😰";
-  loading.value = false;
-};
+
+watch(name, async (name) => {
+  try {
+    loading.value = true;
+    const { body } = await server.greet({ params: { name: names[name % names.length] } });
+    greeting.value = body;
+  } catch (_) {
+    greeting.value = "some unexpected error occurred 😰";
+  } finally {
+    loading.value = false;
+  }
+});
 </script>
 
 <template>
@@ -33,12 +34,10 @@ const callServer = async () => {
         <h1 class="inline-block bg-gradient-to-r from-blue-900 to-blue-500 bg-clip-text text-transparent">
           Tap Water.
         </h1>
-        <p>
-          Build fullstack Vue apps with e2e typesafety in mind. Deploy to Vercel Edge or Serverless within seconds 🚀
-        </p>
+        <p>Build fullstack Vue apps with e2e typesafety in mind. Deploy to Vercel Edge within seconds 🚀</p>
       </div>
       <div class="flex gap-2 flex-col sm:flex-row">
-        <Button @click="callServer" :disabled="loading" data-cy="submit">
+        <Button @click="name++" :disabled="loading" data-cy="submit">
           <span v-if="loading" class="flex justify-center">
             <Icon :icon="spinnerIcon" width="20" class="animate-spin" />
           </span>

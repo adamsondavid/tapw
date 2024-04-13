@@ -6,5 +6,6 @@ const server = initClient(contract, {
   baseHeaders: {},
   throwOnUnknownStatus: true,
   jsonQuery: true,
+  validateResponse: true,
 });
 export const useServer = () => server;
