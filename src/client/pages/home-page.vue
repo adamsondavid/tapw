@@ -35,8 +35,8 @@ watch(name, async (name) => {
           Tap Water.
         </h1>
         <p>
-          Build fullstack Vue apps with e2e typesafety in mind. Deploy to Vercel or any cloud provider running Docker
-          within seconds 🚀
+          Build fullstack Vue apps with e2e typesafety in mind. Deploy to Vercel, Cyclic, Koyeb, Render or any cloud
+          provider running Docker within seconds 🚀
         </p>
       </div>
       <div class="flex gap-2 flex-col sm:flex-row">
