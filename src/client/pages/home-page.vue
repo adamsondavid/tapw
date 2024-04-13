@@ -34,7 +34,10 @@ watch(name, async (name) => {
         <h1 class="inline-block bg-gradient-to-r from-blue-900 to-blue-500 bg-clip-text text-transparent">
           Tap Water.
         </h1>
-        <p>Build fullstack Vue apps with e2e typesafety in mind. Deploy to Vercel Edge within seconds 🚀</p>
+        <p>
+          Build fullstack Vue apps with e2e typesafety in mind. Deploy to Vercel or any cloud provider running Docker
+          within seconds 🚀
+        </p>
       </div>
       <div class="flex gap-2 flex-col sm:flex-row">
         <Button @click="name++" :disabled="loading" data-cy="submit">
