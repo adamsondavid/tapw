@@ -9,11 +9,13 @@
     "check:types": "vue-tsc --noEmit",
     "check:format": "prettier --ignore-path .gitignore --check .",
     "check:lint": "eslint --ext .vue,.ts --ignore-path .gitignore .",
-    "test:e2e": "cypress run --browser chrome"
+    "test:e2e": "cypress run --browser chrome",
+    "build": "npx vite build && npx esbuild src/main.prod.ts --bundle --platform=node --outfile=dist/main.js",
+    "start": "node dist/main.js"
   },
   "engines": {
-    "node": ">=20.0.0 <21.0.0",
-    "npm": ">=10.0.0 <11.0.0"
+    "node": "20.x",
+    "npm": "10.x"
   },
   "dependencies": {
     "@fontsource-variable/inter": "^5.0.17",

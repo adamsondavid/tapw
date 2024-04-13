@@ -1,4 +1,6 @@
 {
+  "buildCommand": "vite build",
+  "outputDirectory": "dist/static",
   "rewrites": [
     { "source": "/api/(.*)", "destination": "/api" },
     { "source": "/(.*)", "destination": "/" }
