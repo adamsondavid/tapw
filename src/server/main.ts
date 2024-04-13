@@ -4,7 +4,8 @@ import { Hono } from "hono";
 import { createHonoEndpoints } from "ts-rest-hono";
 import { contract } from "../common/contract";
 
-const env = z.object({}).parse(process.env);
+// @ts-ignore
+const env = z.object({}).parse(Netlify.env.toObject());
 const router = initRouter();
 
 export const app = new Hono();
