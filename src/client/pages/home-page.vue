@@ -8,7 +8,19 @@ import { Button } from "../components/ui/button";
 
 const server = useServer();
 
-const names = ["Tap Water", "Vue", "ts-rest", "Tailwind", "Cypress", "e2e Typesafety", "Vercel", "Cyclic", "Docker"];
+const names = [
+  "Tap Water",
+  "Vue",
+  "Cloudflare",
+  "ts-rest",
+  "Tailwind",
+  "Vercel",
+  "Cypress",
+  "Docker",
+  "e2e Typesafety",
+  "Netlify",
+  "Heroku",
+];
 const name = ref(-1);
 
 const greeting = ref("");
