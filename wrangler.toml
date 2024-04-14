@@ -1,0 +1,5 @@
+[build]
+  command = "npx vite build && npx esbuild netlify/index.ts --bundle --platform=neutral --outfile=netlify/edge-functions/index.js"
+
+[site]
+  bucket = "dist/static"
