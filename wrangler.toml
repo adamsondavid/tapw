@@ -1,2 +1,3 @@
 name = "tapw"
+pages_build_command = "npx vite build"
 pages_build_output_dir = "./dist/static"
