@@ -1,4 +1,4 @@
-# Tap Water 💧
+# Tap Water 🚰
 
 Build fullstack Vue apps with e2e typesafety and DX in mind.
 Deploy to the cloud within seconds 🚀
