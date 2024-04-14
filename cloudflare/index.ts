@@ -1,4 +1,5 @@
 import { initApp } from "../src/server/main";
-import { handle } from "hono/cloudflare-pages";
 
-export default handle(initApp(process.env));
+export default {
+  fetch: (req: Request, env: typeof process.env) => initApp(env).fetch(req),
+};
