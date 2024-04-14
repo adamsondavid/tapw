@@ -10,5 +10,5 @@ RUN npm run build
 FROM node
 WORKDIR /app
 COPY --from=build /build/dist dist
-EXPOSE 80/tcp
+EXPOSE 3000/tcp
 ENTRYPOINT ["node", "dist/main.js"]
