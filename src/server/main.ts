@@ -4,9 +4,15 @@ import { Hono } from "hono";
 import { createHonoEndpoints } from "ts-rest-hono";
 import { contract } from "../common/contract";
 
-// @ts-ignore // TODO
-const env = z.object({}).parse(Netlify.env.toObject());
-const router = initRouter();
+export function initApp(_env: typeof process.env) {
+  const env = z
+    .object({
+      // TODO: define your env vars zod schema here
+    })
+    .parse(_env);
+  const router = initRouter();
 
-export const app = new Hono();
-createHonoEndpoints(contract, router, app, { logInitialization: false, jsonQuery: true, responseValidation: true });
+  const app = new Hono();
+  createHonoEndpoints(contract, router, app, { logInitialization: false, jsonQuery: true, responseValidation: true });
+  return app;
+}
