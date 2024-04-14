@@ -28,5 +28,5 @@ coverage
 *.sln
 *.sw?
 
-netlify/edge-functions
+netlify
 functions
