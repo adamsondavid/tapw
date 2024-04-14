@@ -14,8 +14,7 @@
     "start": "node dist/main.js"
   },
   "engines": {
-    "node": "20.x",
-    "npm": "10.x"
+    "node": "20.x"
   },
   "dependencies": {
     "@fontsource-variable/inter": "^5.0.17",
