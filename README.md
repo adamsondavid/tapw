@@ -1,19 +1,30 @@
 # Tap Water 💧
 
-Build fullstack Vue apps with e2e typesafety in mind.
-Deploy to Vercel, Cyclic, Koyeb, Render or any cloud provider running Docker within seconds 🚀
+Build fullstack Vue apps with e2e typesafety and DX in mind.
+Deploy to the cloud within seconds 🚀
 
-Current Deployments:
+`tapwater` is a template you can use to create your own application.
+It provides a preconfigured software stack that should ensure first-class DX to kickstart with speed.
+Please notice that this stack is opinionated.
+Feel free to use this template or create a fork and adjust it to your needs.
+
+Currently supported are cloud providers like Vercel, Netlify, Heroku.
+Platforms that comply with Herokus conventions e.g. Cyclic, Koyeb, Render, ... should also work.
+Of course, you can also run `tapwater` anywhere Docker is supported.
+If you would like to target AWS Lambda / Lambda@Edge, GCP CloudFunctions or Azure Serverless Functions, you would need to provide some extra configuration by yourself.
+
+Until now, Vercel and Netlify receive first-class support.
+These two providers provide a great DX and make optimized deploys pretty easy, e.g. distribute static files via CDN and running server code on the edge out of the box.
+Unfortunately, there is no provider-agnostic way to produce optimized build, so we focus our first-class support onto a limited set of providers.
+The alternative cloud providers, including running on Docker, do not separate frontend and backend code (the frontend bundle is served from the api server).
+This lowers performance and might increase server cost.
+But it also simplifies the deployment setup, since most providers are happy to just `npm install` and `npm run start` your app.
+
+Here is a list of deploys where our app currently runs:
 
 - Vercel: https://tapw.vercel.app
+- Netlify: https://tapw.netlify.app
 - Cyclic: https://tapwater.cyclic.app
 - Koyeb: https://tapw-adamson-david.koyeb.app
 - Render: https://tapw.onrender.com
-- Docker: build the [Dockerfile](Dockerfile) and deploy it into any cloud environment that runs containers. e.g. https://tapw-docker.onrender.com/
-
-Until now, Vercel is the most optimized deployment target.
-It recognizes that static files (the frontend) should be globally served via CDN.
-Backend code will be executed in Vercel edge-functions.
-The alternative cloud providers, including running on Docker, do not separate frontend and backend code, which lowers performance and might increase server cost.
-Unfortunately, there is no provider-agnostic way to separate frontend and backend code.
-Since Vercel is the easiest to use platform, we optimize this template for Vercel.
+- Docker: build the [Dockerfile](Dockerfile) and deploy it into any cloud environment that runs containers. e.g. https://tapw-docker.onrender.com

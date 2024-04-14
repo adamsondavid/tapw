@@ -1,0 +1,3 @@
+[build]
+  command = "vite build && esbuild netlify/index.ts --bundle --platform=neutral --outfile=netlify/edge-functions/index.js"
+  publish = "dist/static"
