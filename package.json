@@ -14,7 +14,7 @@
     "start": "node dist/main.js",
     "build:vercel": "vite build",
     "build:netlify": "vite build && esbuild netlify/index.ts --bundle --platform=neutral --outfile=netlify/edge-functions/index.js",
-    "build:cloudflare": "vite build && esbuild cloudflare/index.ts --bundle --platform=neutral --outfile=dist/_worker.js"
+    "build:cloudflare": "vite build && esbuild cloudflare/index.ts --bundle --platform=neutral --outfile=dist/static/_worker.js"
   },
   "engines": {
     "node": "20.x"
