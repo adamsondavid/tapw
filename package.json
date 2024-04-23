@@ -27,7 +27,7 @@
     "@ts-rest/core": "^3.44.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
-    "hono": "^3.12.12",
+    "hono": "^4.2.7",
     "radix-vue": "^1.7.1",
     "tailwind-merge": "^2.2.2",
     "tailwindcss-animate": "^1.0.7",
