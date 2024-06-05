@@ -10,4 +10,4 @@ app.get("/api-spec", (c) =>
   c.json(generateOpenApi(contract, { info: { title: name, version } }, { setOperationId: true })),
 );
 app.get("/api", swaggerUI({ url: "/api-spec" }));
-serve({ fetch: app.fetch, port: 3000 });
+serve({ fetch: app.fetch, port: 5174 });
