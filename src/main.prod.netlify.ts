@@ -1,4 +1,4 @@
-import { initApp } from "../src/server/main";
+import { initApp } from "./server/main";
 // @ts-ignore
 import { handle } from "hono/netlify";
 

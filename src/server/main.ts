@@ -4,13 +4,16 @@ import { Hono } from "hono";
 import { createHonoEndpoints } from "ts-rest-hono";
 import { contract } from "../common/contract";
 
-export function initApp(_env: typeof process.env) {
+export function initApp(unvalidatedEnv: unknown) {
   const env = z
     .object({
       // TODO: define your env vars zod schema here
     })
-    .parse(_env);
-  const router = initRouter();
+    .parse(unvalidatedEnv);
+
+  // TODO: create and init services / SDKs here and inject env vars
+
+  const router = initRouter(/* TODO: inject services / SDKs */);
 
   const app = new Hono();
   createHonoEndpoints(contract, router, app, { logInitialization: false, jsonQuery: true, responseValidation: true });
