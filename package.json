@@ -13,8 +13,8 @@
     "build": "vite build && esbuild src/main.prod.ts --bundle --platform=node --outfile=dist/main.js",
     "start": "node dist/main.js",
     "build:vercel": "vite build",
-    "build:netlify": "vite build && esbuild cloud/netlify.ts --bundle --platform=neutral --outfile=netlify/edge-functions/index.js",
-    "build:cloudflare": "vite build && esbuild cloud/cloudflare.ts --bundle --platform=neutral --outfile=functions/api/[[catchall]].js"
+    "build:netlify": "vite build && esbuild src/main.prod.netlify.ts --bundle --platform=neutral --outfile=netlify/edge-functions/index.js",
+    "build:cloudflare": "vite build && esbuild src/main.prod.cloudflare.ts --bundle --platform=neutral --outfile=functions/api/[[catchall]].js"
   },
   "engines": {
     "node": "20.x"
