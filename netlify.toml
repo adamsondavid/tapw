@@ -1,3 +1,8 @@
 [build]
   command = "npm run build:netlify"
   publish = "dist/static"
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31556952, immutable"
