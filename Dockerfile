@@ -11,4 +11,4 @@ FROM node
 WORKDIR /app
 COPY --from=build /build/dist dist
 EXPOSE 3000/tcp
-ENTRYPOINT ["node", "dist/main.js"]
+ENTRYPOINT ["node", "--enable-source-maps", "dist/main.js"]
