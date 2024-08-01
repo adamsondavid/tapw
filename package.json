@@ -39,7 +39,7 @@
   },
   "devDependencies": {
     "@hono/swagger-ui": "^0.2.2",
-    "@ts-rest/open-api": "^3.45.2",
+    "@ts-rest/open-api": "^3.49.2",
     "@types/node": "^20.14.13",
     "@vitejs/plugin-vue": "^5.1.2",
     "@vue/eslint-config-prettier": "^9.0.0",
