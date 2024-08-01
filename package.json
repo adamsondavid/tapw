@@ -30,7 +30,7 @@
     "clsx": "^2.1.1",
     "hono": "^3.12.12",
     "radix-vue": "^1.9.2",
-    "tailwind-merge": "^2.3.0",
+    "tailwind-merge": "^2.4.0",
     "tailwindcss-animate": "^1.0.7",
     "ts-rest-hono": "^0.5.0",
     "vue": "^3.4.35",
