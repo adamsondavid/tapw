@@ -6,11 +6,11 @@ import { fetchRequestHandler } from "@ts-rest/serverless/fetch";
 export function initApi(unvalidatedEnv: unknown) {
   const env = z
     .object({
-      greeting: z.string().optional(),
+      GREETING: z.string().optional(),
     })
     .parse(unvalidatedEnv);
 
-  const router = initRouter(env.greeting);
+  const router = initRouter(env.GREETING);
 
   return (request: Request) =>
     fetchRequestHandler({
