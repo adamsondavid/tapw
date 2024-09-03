@@ -13,8 +13,8 @@
     "build": "vite build && esbuild src/main.prod.ts --bundle --sourcemap --platform=node --outfile=dist/main.js",
     "start": "node --enable-source-maps dist/main.js",
     "build:vercel": "vite build",
-    "build:netlify": "vite build && esbuild src/main.prod.netlify.ts --bundle --sourcemap --platform=neutral --outfile=netlify/edge-functions/index.js",
-    "build:cloudflare": "vite build && esbuild src/main.prod.cloudflare.ts --bundle --sourcemap --platform=neutral --outfile=functions/api/[[catchall]].js"
+    "build:netlify": "vite build && esbuild src/main.prod.netlify.ts --bundle --platform=neutral --outfile=netlify/edge-functions/index.js",
+    "build:cloudflare": "vite build && esbuild src/main.prod.cloudflare.ts --bundle --platform=neutral --outfile=functions/api/[[catchall]].js"
   },
   "engines": {
     "node": "20.x"
@@ -22,17 +22,17 @@
   "dependencies": {
     "@fontsource-variable/inter": "^5.0.20",
     "@fontsource-variable/jetbrains-mono": "^5.0.22",
-    "@hono/node-server": "^1.12.1",
+    "@hono/node-server": "^1.12.2",
     "@iconify-icons/uil": "^1.2.3",
     "@iconify/vue": "^4.1.2",
     "@ts-rest/core": "^3.49.2",
+    "@ts-rest/serverless": "^3.51.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
-    "hono": "^3.12.12",
+    "hono": "^4.5.10",
     "radix-vue": "^1.9.5",
     "tailwind-merge": "^2.5.2",
     "tailwindcss-animate": "^1.0.7",
-    "ts-rest-hono": "^0.5.0",
     "vue": "^3.4.38",
     "vue-router": "^4.4.3",
     "zod": "^3.23.8"
@@ -40,7 +40,7 @@
   "devDependencies": {
     "@hono/swagger-ui": "^0.4.1",
     "@ts-rest/open-api": "^3.51.0",
-    "@types/node": "^20.16.2",
+    "@types/node": "^20.16.3",
     "@vitejs/plugin-vue": "^5.1.3",
     "@vue/eslint-config-prettier": "^9.0.0",
     "@vue/eslint-config-typescript": "^13.0.0",
@@ -51,7 +51,7 @@
     "eslint": "^8.57.0",
     "eslint-plugin-cypress": "^3.5.0",
     "eslint-plugin-vue": "^9.27.0",
-    "postcss": "^8.4.42",
+    "postcss": "^8.4.44",
     "prettier": "^3.3.3",
     "tailwindcss": "^3.4.10",
     "tsx": "^4.19.0",

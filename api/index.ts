@@ -1,5 +1,4 @@
-import { initApp } from "../src/server/main";
-import { handle } from "hono/vercel";
+import { initApi } from "../src/server/main";
 
 export const config = { runtime: "edge" };
-export default handle(initApp(process.env));
+export default initApi(process.env);
