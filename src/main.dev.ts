@@ -7,8 +7,13 @@ import { swaggerUI } from "@hono/swagger-ui";
 import { Hono } from "hono";
 
 const app = new Hono();
-app.get("/api", swaggerUI({ url: "/api-spec" }));
-app.get("/api-spec", (c) =>
+
+app.mount("/api", initApi(process.env), {
+  replaceRequest: (req) => new Request(new URL(req.url), req),
+});
+
+app.get("/openapi", swaggerUI({ url: "/openapi-spec" }));
+app.get("/openapi-spec", (c) =>
   c.json(
     generateOpenApi(
       contract,
@@ -20,5 +25,5 @@ app.get("/api-spec", (c) =>
     ),
   ),
 );
-app.mount("/", initApi(process.env));
+
 serve({ fetch: app.fetch, port: 5174 });
