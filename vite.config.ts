@@ -1,15 +1,16 @@
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
+import devServer from "@hono/vite-dev-server";
 
 export default defineConfig({
-  plugins: [vue()],
+  plugins: [
+    vue(),
+    devServer({
+      entry: "src/main.dev.ts",
+      exclude: [/^(?!\/(api|openapi)).*/],
+    }),
+  ],
   build: {
     outDir: "dist/static",
-  },
-  server: {
-    proxy: {
-      "/api": "http://127.0.0.1:5174",
-      "/openapi": "http://127.0.0.1:5174",
-    },
   },
 });

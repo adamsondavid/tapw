@@ -3,9 +3,9 @@
   "private": true,
   "version": "0.0.0",
   "author": "David Adamson",
-  "type": "commonjs",
+  "type": "module",
   "scripts": {
-    "dev": "concurrently --kill-others \"vite\" \"tsx watch --ignore 'vite.config.ts.timestamp-*.mjs' --ignore 'src/client/**/*' src/main.dev.ts\"",
+    "dev": "vite",
     "check:types": "vue-tsc --noEmit",
     "check:format": "prettier --ignore-path .gitignore --check .",
     "check:lint": "eslint --ext .vue,.ts --ignore-path .gitignore .",
@@ -39,6 +39,7 @@
   },
   "devDependencies": {
     "@hono/swagger-ui": "^0.4.1",
+    "@hono/vite-dev-server": "^0.15.2",
     "@ts-rest/open-api": "^3.51.0",
     "@types/node": "^20.16.5",
     "@vitejs/plugin-vue": "^5.1.3",

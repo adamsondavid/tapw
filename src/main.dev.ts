@@ -1,5 +1,4 @@
 import { initApi } from "./server/main";
-import { serve } from "@hono/node-server";
 import { name, version } from "../package.json";
 import { generateOpenApi } from "@ts-rest/open-api";
 import { contract } from "./common/contract";
@@ -26,4 +25,4 @@ app.get("/openapi-spec", (c) =>
   ),
 );
 
-serve({ fetch: app.fetch, port: 5174 });
+export default app;
