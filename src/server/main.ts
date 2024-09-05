@@ -17,6 +17,6 @@ export function initApi(unvalidatedEnv: unknown) {
       request,
       contract,
       router,
-      options: { jsonQuery: true, responseValidation: true },
+      options: { jsonQuery: true, responseValidation: true, basePath: "/api" },
     });
 }

@@ -9,7 +9,16 @@ import { Hono } from "hono";
 const app = new Hono();
 app.get("/api", swaggerUI({ url: "/api-spec" }));
 app.get("/api-spec", (c) =>
-  c.json(generateOpenApi(contract, { info: { title: name, version } }, { setOperationId: true })),
+  c.json(
+    generateOpenApi(
+      contract,
+      {
+        info: { title: name, version },
+        servers: [{ url: "/api" }],
+      },
+      { setOperationId: true },
+    ),
+  ),
 );
 app.mount("/", initApi(process.env));
 serve({ fetch: app.fetch, port: 5174 });

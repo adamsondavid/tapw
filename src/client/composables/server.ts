@@ -2,7 +2,7 @@ import { initClient } from "@ts-rest/core";
 import { contract } from "../../common/contract";
 
 const server = initClient(contract, {
-  baseUrl: "",
+  baseUrl: "/api",
   baseHeaders: {},
   throwOnUnknownStatus: true,
   jsonQuery: true,

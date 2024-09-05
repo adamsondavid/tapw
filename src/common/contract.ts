@@ -14,5 +14,5 @@ export const contract = initContract().router(
       },
     },
   },
-  { strictStatusCodes: true, pathPrefix: "/api" },
+  { strictStatusCodes: true },
 );
