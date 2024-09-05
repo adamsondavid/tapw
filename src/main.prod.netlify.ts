@@ -1,7 +1,5 @@
-import { initApp } from "./server/main";
-// @ts-ignore
-import { handle } from "hono/netlify";
+import { initApi } from "./server/main";
 
 export const config = { path: "/api/*" };
 // @ts-ignore
-export default handle(initApp(Netlify.env.toObject()));
+export default initApi(Netlify.env.toObject());

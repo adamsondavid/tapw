@@ -1,10 +1,10 @@
 import { contract } from "../common/contract";
-import { initServer } from "ts-rest-hono";
+import { tsr } from "@ts-rest/serverless/fetch";
 
-export function initRouter() {
-  return initServer().router(contract, {
-    async greet({ params }) {
-      return { status: 200, body: `Hello ${params.name}` };
+export function initRouter(greeting?: string) {
+  return tsr.router(contract, {
+    async greet({ query }) {
+      return { status: 200, body: `${greeting ?? "Hello"} ${query.name}` };
     },
   });
 }

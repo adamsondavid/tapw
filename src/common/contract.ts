@@ -5,8 +5,8 @@ export const contract = initContract().router(
   {
     greet: {
       method: "GET",
-      path: "/greeting/:name",
-      pathParams: z.object({
+      path: "/greeting",
+      query: z.object({
         name: z.string(),
       }),
       responses: {
@@ -14,5 +14,5 @@ export const contract = initContract().router(
       },
     },
   },
-  { pathPrefix: "/api", strictStatusCodes: true },
+  { strictStatusCodes: true },
 );

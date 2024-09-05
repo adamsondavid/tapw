@@ -1,4 +1,3 @@
-import { initApp } from "./server/main";
-import { handle } from "hono/cloudflare-pages";
+import { initApi } from "./server/main";
 
-export const onRequest = (c: any) => handle(initApp(c.env))(c);
+export const onRequest = (c: any) => initApi(c.env)(c.request);
