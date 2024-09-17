@@ -1,8 +1,7 @@
 {
   "compilerOptions": {
     "target": "esnext",
-    "module": "esnext",
-    "moduleResolution": "bundler",
+    "module": "preserve",
     "strict": true,
     "noImplicitReturns": true,
     "skipLibCheck": true,
