@@ -1,8 +1,8 @@
-# Tap Water 🚰
+# Tap Water 💧
 
-A Fast, Fullstack Vue.js Template for Serverless and Docker Environments 🌐
+A Fast, Fullstack Vue.js Template for Serverless and Docker Environments. 🌐
 
-Build modern fullstack Vue apps with **end-to-end typesafety** and a focus on **developer experience**. Deploy effortlessly to the cloud in seconds with first-class support for popular providers 🚀.
+Build modern fullstack Vue apps with **end-to-end typesafety** and a focus on **developer experience**. Deploy effortlessly to the cloud in seconds with first-class support for popular providers. 🚀
 
 ## Overview
 
@@ -13,7 +13,9 @@ Fork, modify, and make it your own! ⚙️
 ## ✨ Key Features
 
 - **Vue 3** powered frontend with Vite for fast builds and HMR.
-- **End-to-end typesafety** across frontend and backend.
+- **Tailwind CSS** and **Shadcn** for rapid and flexible UI development.
+- A fully **integrated backend**, powered by serverless standards, compatible libraries like Hono.
+- **End-to-end typesafety** with TypeScript and **ts-rest** across both the frontend and backend.
 - Focus on **DX**: fast local development and seamless deployments.
 - Optimized for **serverless platforms** like Vercel Edge, Netlify, Cloudflare Pages, and Deno Deploy. Easy **Docker** deployment for environments that support containers.
 
@@ -37,7 +39,7 @@ Please do not use this template in production if you care about features like SE
 
 > **Note:** Providers like AWS Lambda, GCP CloudFunctions, and Azure Serverless Functions are not supported and require additional configuration to target their specific environments. For most use cases, Vercel, Netlify, and Cloudflare offer the best DX out of the box.
 
-## 🚀 Live Demos
+## 🎬 Live Demos
 
 Check out `tapwater` in action across various providers:
 
@@ -48,7 +50,7 @@ Check out `tapwater` in action across various providers:
 - [Render (Heroku-like)](https://tapw.onrender.com)
 - **Docker**: Build the [Dockerfile](Dockerfile) and deploy it on any cloud provider that supports containers (e.g., [Docker on Render](https://tapw-docker.onrender.com)).
 
-## 📦 Get Started
+## 🚀 Get Started
 
 1. **Click "Use this template"**: create your own repo based on this template
 1. **Clone the repo**: `git clone https://github.com/your-user/your-repo && cd your-repo`
