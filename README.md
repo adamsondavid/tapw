@@ -20,6 +20,7 @@ Fork, modify, and make it your own! ⚙️
 - Optimized for **serverless platforms** like Vercel Edge, Netlify, Cloudflare Pages, and Deno Deploy. Easy **Docker** deployment for environments that support containers.
 
 ## ⚠️ Limitations
+
 No Server-Side Rendering: This template only supports Vue.js in an old fashioned way as Single Page Application. SSR is not supported at this time.
 Please do not use this template in production if you care about features like SEO!
 
@@ -54,12 +55,11 @@ Check out `tapwater` in action across various providers:
 
 1. **Click "Use this template"**: create your own repo based on this template
 1. **Clone the repo**: `git clone https://github.com/your-user/your-repo && cd your-repo`
-2. **Install dependencies**: `npm install`
-3. **Develop locally**: `npm run dev`
-4. **Deploy**: Login to Vercel, Netlify or Cloudflare Pages and import the project. The platforms should recognize all config parameters automatically.
+1. **Install dependencies**: `npm install`
+1. **Develop locally**: `npm run dev`
+1. **Deploy**: Login to Vercel, Netlify or Cloudflare Pages and import the project. The platforms should recognize all config parameters automatically.
 
 ## 📄 License
 
 This project is licensed under the [MIT License](LICENSE). Feel free to fork, modify, and share your creations!
 Please make sure to include this repository's license in your distribution.
-
