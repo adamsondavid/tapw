@@ -1,29 +1,59 @@
 # Tap Water 🚰
 
-Build fullstack Vue apps with e2e typesafety and DX in mind.
-Deploy to the cloud within seconds 🚀
+A Fast, Fullstack Vue.js Template for Serverless and Docker Environments 🌐
 
-`tapwater` is a template you can use to create your own application.
-It provides a preconfigured software stack that should ensure first-class DX to kickstart with speed.
-Please notice that this stack is opinionated.
-Feel free to use this template or create a fork and adjust it to your needs.
+Build modern fullstack Vue apps with **end-to-end typesafety** and a focus on **developer experience**. Deploy effortlessly to the cloud in seconds with first-class support for popular providers 🚀.
 
-Currently supported are cloud providers like Vercel, Netlify, Cloudflare Pages and Heroku-like (platforms that comply with Herokus conventions e.g. Koyeb, Render, ...).
-Of course, you can also run `tapwater` anywhere Docker is supported.
-If you would like to target AWS Lambda / Lambda@Edge / Amplify, GCP CloudFunctions or Azure Serverless Functions, you would need to provide some extra configuration by yourself.
+## Overview
 
-Until now, Vercel, Netlify and Cloudflare Pages receive first-class support.
-These three providers provide a great DX and make optimized deploys pretty easy, e.g. distribute static files via CDN and running server code on the edge out of the box.
-Unfortunately, there is no provider-agnostic way to produce optimized builds, so we focus our first-class support onto a limited set of providers.
-The alternative cloud providers, including running on Docker, do not separate frontend and backend code (the frontend bundle is served from the api server).
-This lowers performance and might increase server cost.
-But it also simplifies the deployment setup, since most providers are happy to just `npm install` and `npm run start` your app.
+`tapwater` is an opinionated fullstack template designed to jumpstart your development with minimal setup. It provides a robust stack that prioritizes performance, scalability, and an optimal developer workflow. Whether you're deploying to serverless environments like Vercel, Netlify, or Cloudflare Pages, or spinning up a Docker container in the cloud, `tapwater` has you covered.
 
-Here is a list of deploys where our app currently runs:
+Fork, modify, and make it your own! ⚙️
 
-- Vercel: https://tapw.vercel.app
-- Netlify: https://tapw.netlify.app
-- Cloudflare: https://tapw.pages.dev
-- Deno-Deploy: https://tapw.deno.dev
-- Render: https://tapw.onrender.com
-- Docker: build the [Dockerfile](Dockerfile) and deploy it into any cloud environment that runs containers. e.g. https://tapw-docker.onrender.com
+## ✨ Key Features
+
+- **Vue 3** powered frontend with Vite for fast builds and HMR.
+- **End-to-end typesafety** across frontend and backend.
+- Focus on **DX**: fast local development and seamless deployments.
+- Optimized for **serverless platforms** like Vercel Edge, Netlify, Cloudflare Pages, and Deno Deploy. Easy **Docker** deployment for environments that support containers.
+
+## 🛠️ Supported Deployments
+
+### First-Class Support:
+
+- **Vercel Edge**
+- **Netlify**
+- **Cloudflare Pages**
+
+### Other Supported Environments:
+
+- **Deno Deploy**: Ready for serverless functions with Deno.
+- **Heroku-like Platforms**: Works with platforms that follow Heroku’s conventions (e.g. `npm run ci && npm run build`, followed by `npm run start`).
+- **Docker**: Package and deploy anywhere Docker runs.
+
+> **Note:** Providers like AWS Lambda, GCP CloudFunctions, and Azure Serverless Functions are not supported and require additional configuration to target their specific environments. For most use cases, Vercel, Netlify, and Cloudflare offer the best DX out of the box.
+
+## 🚀 Live Demos
+
+Check out `tapwater` in action across various providers:
+
+- [Vercel Edge](https://tapw.vercel.app)
+- [Netlify](https://tapw.netlify.app)
+- [Cloudflare Pages](https://tapw.pages.dev)
+- [Deno Deploy](https://tapw.deno.dev)
+- [Render (Heroku-like)](https://tapw.onrender.com)
+- **Docker**: Build the [Dockerfile](Dockerfile) and deploy it on any cloud provider that supports containers (e.g., [Docker on Render](https://tapw-docker.onrender.com)).
+
+## 📦 Get Started
+
+1. **Click "Use this template"**: create your own repo based on this template
+1. **Clone the repo**: `git clone https://github.com/your-user/your-repo && cd your-repo`
+2. **Install dependencies**: `npm install`
+3. **Develop locally**: `npm run dev`
+4. **Deploy**: Login to Vercel, Netlify or Cloudflare Pages and import the project. The platforms should recognize all config parameters automatically.
+
+## 📄 License
+
+This project is licensed under the [MIT License](LICENSE). Feel free to fork, modify, and share your creations!
+Please make sure to include this repository's license in your distribution.
+
