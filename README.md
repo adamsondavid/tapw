@@ -24,5 +24,6 @@ Here is a list of deploys where our app currently runs:
 - Vercel: https://tapw.vercel.app
 - Netlify: https://tapw.netlify.app
 - Cloudflare: https://tapw.pages.dev
+- Deno-Deploy: https://tapw.deno.dev
 - Render: https://tapw.onrender.com
 - Docker: build the [Dockerfile](Dockerfile) and deploy it into any cloud environment that runs containers. e.g. https://tapw-docker.onrender.com
