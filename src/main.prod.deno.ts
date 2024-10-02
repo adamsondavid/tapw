@@ -13,7 +13,7 @@ app.use("/assets/*", async (c, next) => {
     await next();
     c.header("Cache-Control", "public, max-age=31556952, immutable");
 });
-app.use("*", serveStatic({ root: "./dist/static" }));
+app.use("*", serveStatic({ root: "./static" }));
 app.notFound(() => app.request("/"));
 
 // @ts-ignore
