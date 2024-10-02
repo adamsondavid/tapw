@@ -39,4 +39,4 @@ jobs:
         with:
           project: "tapw"
           entrypoint: "api/index.ts"
-          root: "dist"
+          root: ""
