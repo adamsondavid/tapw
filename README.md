@@ -17,6 +17,10 @@ Fork, modify, and make it your own! ⚙️
 - Focus on **DX**: fast local development and seamless deployments.
 - Optimized for **serverless platforms** like Vercel Edge, Netlify, Cloudflare Pages, and Deno Deploy. Easy **Docker** deployment for environments that support containers.
 
+## ⚠️ Limitations
+No Server-Side Rendering: This template only supports Vue.js in an old fashioned way as Single Page Application. SSR is not supported at this time.
+Please do not use this template in production if you care about features like SEO!
+
 ## 🛠️ Supported Deployments
 
 ### First-Class Support:
