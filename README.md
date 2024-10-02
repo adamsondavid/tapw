@@ -16,6 +16,7 @@ Fork, modify, and make it your own! ⚙️
 - **Tailwind CSS** and **Shadcn** for rapid and flexible UI development.
 - A fully **integrated backend**, powered by serverless standards, compatible libraries like Hono.
 - **End-to-end typesafety** with TypeScript and **ts-rest** across both the frontend and backend.
+- **Cypress** for robust e2e testing.
 - Focus on **DX**: fast local development and seamless deployments.
 - Optimized for **serverless platforms** like Vercel Edge, Netlify, Cloudflare Pages, and Deno Deploy. Easy **Docker** deployment for environments that support containers.
 
@@ -54,7 +55,7 @@ Check out `tapwater` in action across various providers:
 ## 🚀 Get Started
 
 1. **Click "Use this template"**: create your own repo based on this template
-1. **Clone the repo**: `git clone https://github.com/your-user/your-repo && cd your-repo`
+1. **Clone the repo**: `git clone git@github.com:your-username/your-repo.git && cd your-repo`
 1. **Install dependencies**: `npm install`
 1. **Develop locally**: `npm run dev`
 1. **Deploy**: Login to Vercel, Netlify or Cloudflare Pages and import the project. The platforms should recognize all config parameters automatically.
