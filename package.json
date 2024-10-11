@@ -10,12 +10,12 @@
     "check:format": "prettier --ignore-path .gitignore --check .",
     "check:lint": "eslint --ext .vue,.ts --ignore-path .gitignore .",
     "test:e2e": "cypress run --browser chrome",
-    "build": "vite build && esbuild src/main.prod.ts --bundle --sourcemap --platform=node --format=esm --outfile=dist/main.js",
+    "build": "vite build && esbuild src/main.prod.ts --bundle --minify --sourcemap --platform=node --format=esm --packages=external --outfile=dist/main.js",
     "start": "node --enable-source-maps dist/main.js",
     "build:vercel": "vite build",
-    "build:netlify": "vite build && esbuild src/main.prod.netlify.ts --bundle --platform=neutral --outfile=netlify/edge-functions/index.js",
-    "build:cloudflare": "vite build && esbuild src/main.prod.cloudflare.ts --bundle --platform=neutral --outfile=functions/api/[[catchall]].js",
-    "build:deno": "vite build && esbuild src/main.prod.deno.ts --bundle --platform=neutral --outfile=dist/main.js"
+    "build:netlify": "vite build && esbuild src/main.prod.netlify.ts --bundle --minify --platform=neutral --outfile=netlify/edge-functions/index.js",
+    "build:cloudflare": "vite build && esbuild src/main.prod.cloudflare.ts --bundle --minify --platform=neutral --outfile=functions/api/[[catchall]].js",
+    "build:deno": "vite build && esbuild src/main.prod.deno.ts --bundle --minify --platform=neutral --outfile=dist/main.js"
   },
   "engines": {
     "node": "20.x"
