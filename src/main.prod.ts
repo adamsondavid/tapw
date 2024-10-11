@@ -16,7 +16,7 @@ app.use("/assets/*", async (c, next) => {
 app.use("*", serveStatic({ root: "./dist/static" }));
 app.notFound(() => app.request("/"));
 
-const server = serve({ fetch: app.fetch, port: 3000 }, ({ port }) => {
+const server = serve({ fetch: app.fetch, port: Number(process.env.PORT) || 3000 }, ({ port }) => {
   console.log(`server started on http://localhost:${port}/`);
 });
 process.on("SIGINT", () => {
