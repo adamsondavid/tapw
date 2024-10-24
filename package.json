@@ -15,7 +15,8 @@
     "build:vercel": "vite build",
     "build:netlify": "vite build && esbuild src/main.prod.netlify.ts --bundle --minify --platform=neutral --outfile=netlify/edge-functions/index.js",
     "build:cloudflare": "vite build && esbuild src/main.prod.cloudflare.ts --bundle --minify --platform=neutral --outfile=functions/api/[[catchall]].js",
-    "build:deno": "vite build && esbuild src/main.prod.deno.ts --bundle --minify --platform=neutral --outfile=dist/main.js"
+    "build:deno": "vite build && esbuild src/main.prod.deno.ts --bundle --minify --platform=neutral --outfile=dist/main.js",
+    "build:homebrew-serverless": "vite build && esbuild src/main.prod.homebrew-serverless.ts --bundle --minify --platform=neutral --outfile=dist/functions/api.js"
   },
   "engines": {
     "node": "20.x"
