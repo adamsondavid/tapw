@@ -16,7 +16,8 @@
     "build:netlify": "vite build && esbuild src/main.prod.netlify.ts --bundle --minify --platform=neutral --outfile=netlify/edge-functions/index.js",
     "build:cloudflare": "vite build && esbuild src/main.prod.cloudflare.ts --bundle --minify --platform=neutral --outfile=functions/api/[[catchall]].js",
     "build:deno": "vite build && esbuild src/main.prod.deno.ts --bundle --minify --platform=neutral --outfile=dist/main.js",
-    "build:homebrew-serverless": "vite build && esbuild src/main.prod.homebrew-serverless.ts --bundle --minify --platform=neutral --outfile=dist/functions/api.js"
+    "build:nano-edge": "vite build && esbuild src/main.prod.nano-edge.ts --bundle --minify --platform=neutral --outfile=dist/functions/api.js",
+    "deploy:nano-edge": "npm run build:nano-edge && nano-edge deploy && echo TODO delete this run script!! better move deploy command to gh action!"
   },
   "engines": {
     "node": "20.x"
@@ -42,6 +43,7 @@
   "devDependencies": {
     "@hono/swagger-ui": "^0.4.1",
     "@hono/vite-dev-server": "^0.16.0",
+    "@nano-edge/cli": "^0.6.0",
     "@ts-rest/open-api": "^3.51.0",
     "@types/node": "^20.17.5",
     "@vitejs/plugin-vue": "^5.1.4",
