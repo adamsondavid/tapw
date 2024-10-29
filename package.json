@@ -20,7 +20,7 @@
     "deploy:nano-edge": "npm run build:nano-edge && nano-edge deploy && echo TODO delete this run script!! better move deploy command to gh action!"
   },
   "engines": {
-    "node": "22.x"
+    "node": "20.x"
   },
   "dependencies": {
     "@fontsource-variable/inter": "^5.1.0",
