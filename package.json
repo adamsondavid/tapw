@@ -43,7 +43,7 @@
   "devDependencies": {
     "@hono/swagger-ui": "^0.4.1",
     "@hono/vite-dev-server": "^0.16.0",
-    "@nano-edge/cli": "^1.5.0",
+    "@nano-edge/cli": "^1.6.0",
     "@ts-rest/open-api": "^3.51.0",
     "@types/node": "^20.17.5",
     "@vitejs/plugin-vue": "^5.1.4",
