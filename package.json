@@ -17,7 +17,7 @@
     "build:cloudflare": "vite build && esbuild src/main.prod.cloudflare.ts --bundle --minify --platform=neutral --outfile=functions/api/[[catchall]].js",
     "build:deno": "vite build && esbuild src/main.prod.deno.ts --bundle --minify --platform=neutral --outfile=dist/main.js",
     "build:nano-edge": "vite build && esbuild src/main.prod.nano-edge.ts --bundle --minify --platform=neutral --outfile=dist/functions/api.js",
-    "deploy:nano-edge": "npm run build:nano-edge && nano-edge deploy && echo TODO delete this run script!! better move deploy command to gh action!"
+    "deploy:nano-edge": "npm run build:nano-edge && nano-edge deploy --auth-token=tapw && echo TODO delete this run script!! better move deploy command to gh action!"
   },
   "engines": {
     "node": "20.x"
