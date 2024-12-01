@@ -30,7 +30,7 @@
     "@ts-rest/serverless": "^3.51.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
-    "hono": "^4.6.8",
+    "hono": "^4.6.12",
     "radix-vue": "^1.9.8",
     "tailwind-merge": "^2.5.4",
     "tailwindcss-animate": "^1.0.7",
