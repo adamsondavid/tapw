@@ -18,7 +18,7 @@ Fork, modify, and make it your own! ⚙️
 - **End-to-end typesafety** with TypeScript and **ts-rest** across both the frontend and backend.
 - **Cypress** for robust e2e testing.
 - Focus on **DX**: fast local development and seamless deployments.
-- Optimized for **serverless platforms** like Vercel Edge, Netlify, Cloudflare Pages, and Deno Deploy. Easy **Docker** deployment for environments that support containers.
+- Optimized for **serverless platforms** like Cloudflare Pages, Vercel Edge, Deno Deploy and Netlify. Easy **Docker** deployment for environments that support containers.
 
 ## ⚠️ Limitations
 
@@ -29,36 +29,37 @@ Please do not use this template in production if you care about features like SE
 
 ### First-Class Support:
 
-- **Vercel Edge**
-- **Netlify**
 - **Cloudflare Pages**
+- **Vercel Edge**
 
 ### Other Supported Environments:
 
-- **Deno Deploy**: Ready for serverless functions with Deno.
+- **Deno Deploy**
+- **Netlify**
 - **Heroku-like Platforms**: Works with platforms that follow Heroku’s conventions (e.g. `npm run ci && npm run build`, followed by `npm run start`).
 - **Docker**: Package and deploy anywhere Docker runs.
 
-> **Note:** Providers like AWS Lambda, GCP CloudFunctions, and Azure Serverless Functions are not supported and require additional configuration to target their specific environments. For most use cases, Vercel, Netlify, and Cloudflare offer the best DX out of the box.
+> **Note:** Providers like AWS Lambda, GCP CloudFunctions, and Azure Serverless Functions are not supported out of the box since they require additional configuration to target their specific environments. For most use cases, Cloudflare, Vercel, Deno Deploy and Netlify offer the best DX out of the box.
+
+> **For hobby projects:** We recommend Cloudflare Pages due to its excellent free tier, which includes unlimited bandwidth, 100,000 function invocations per day, allowance for commercial use, and no unexpected charges when you exceed the limits.
+> Vercel and Deno Deploy are another great options, though their free tier is more restrictive, offering 100 GB of bandwidth and 1 million function invocations per month. They similarly avoid overage charges. Vercel's free tier disallows commercial usage.
+> Be cautious with Netlify, as exceeding its free tier will automatically upgrade you to a paid plan, regardless of whether you have registered a credit card.
 
 ## 🎬 Live Demos
 
 Check out `tapwater` in action across various providers:
 
-- [Vercel Edge](https://tapw.vercel.app)
-- [Netlify](https://tapw.netlify.app)
 - [Cloudflare Pages](https://tapw.pages.dev)
+- [Vercel Edge](https://tapw.vercel.app)
 - [Deno Deploy](https://tapw.deno.dev)
-- [Render (Heroku-like)](https://tapw.onrender.com)
-- **Docker**: Build the [Dockerfile](Dockerfile) and deploy it on any cloud provider that supports containers (e.g., [Docker on Render](https://tapw-docker.onrender.com)).
 
 ## 🚀 Get Started
 
 1. **Click "Use this template"**: create your own repo based on this template
-1. **Clone the repo**: `git clone git@github.com:your-username/your-repo.git && cd your-repo`
-1. **Install dependencies**: `npm install`
-1. **Develop locally**: `npm run dev`
-1. **Deploy**: Login to Vercel, Netlify or Cloudflare Pages and import the project. The platforms should recognize all config parameters automatically.
+2. **Clone the repo**: `git clone git@github.com:your-username/your-repo.git && cd your-repo`
+3. **Install dependencies**: `npm install`
+4. **Develop locally**: `npm run dev`
+5. **Deploy**: Login to Cloudflare Pages, Vercel, Deno Deploy, Netlify or Heroku(-like) and import the project. The platforms should recognize all config parameters automatically. If you want to deploy the application as container, checkout our [Dockerfile](Dockerfile).
 
 ## 📄 License
 
