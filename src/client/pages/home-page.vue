@@ -31,7 +31,8 @@ watch(name, async (name) => {
     loading.value = true;
     const { body } = await server.greet({ query: { name: names[name % names.length] } });
     greeting.value = body;
-  } catch (_) {
+  } catch (e) {
+    console.error(e);
     greeting.value = "some unexpected error occurred 😰";
   } finally {
     loading.value = false;
@@ -49,7 +50,7 @@ watch(name, async (name) => {
         <p>Build fullstack Vue apps with e2e typesafety and DX in mind. Deploy to the cloud within seconds 🚀</p>
       </div>
       <div class="flex gap-2 flex-col sm:flex-row">
-        <Button @click="name++" :disabled="loading" data-cy="submit">
+        <Button :disabled="loading" data-cy="submit" @click="name++">
           <span v-if="loading" class="flex justify-center">
             <Icon :icon="spinnerIcon" width="20" class="animate-spin" />
           </span>
