@@ -6,6 +6,15 @@ export function initRouter(greeting?: string) {
     async greet({ query }) {
       console.assert(true, "hello");
       console.assert(false, "bye");
+      console.table({ a: "b" });
+      console.count();
+      console.count();
+      console.trace("trace");
+      console.time();
+      console.timeEnd();
+      console.clear();
+      console.dir({ k: "o" }, { depth: Infinity });
+      console.group("abc");
       console.debug("debug");
       console.info(`info ${query.name}`);
       console.log({ a: "b" });
