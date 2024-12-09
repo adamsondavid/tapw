@@ -18,7 +18,7 @@ jobs:
           deno-version: v1.x
       - uses: actions/setup-node@v4
         with:
-          node-version: 20.x
+          node-version: 22.x
       - run: npm ci --prefer-offline --no-audit
       - run: npm run build:deno
       - uses: denoland/deployctl@v1
