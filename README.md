@@ -39,9 +39,11 @@ Please do not use this template in production if you care about features like SE
 - **Heroku-like Platforms**: Works with platforms that follow Heroku’s conventions (e.g. `npm run ci && npm run build`, followed by `npm run start`).
 - **Docker**: Package and deploy anywhere Docker runs.
 
-> **Note:** Providers like AWS Lambda, GCP CloudFunctions, and Azure Serverless Functions are not supported out of the box since they require additional configuration to target their specific environments. For most use cases, Cloudflare, Vercel, Deno Deploy and Netlify offer the best DX out of the box.
+> [!NOTE]
+> Providers like AWS Lambda, GCP CloudFunctions, and Azure Serverless Functions are not supported out of the box since they require additional configuration to target their specific environments. For most use cases, Cloudflare, Vercel, Deno Deploy and Netlify offer the best DX out of the box.
 
-> **For hobby projects:** We recommend Cloudflare Pages due to its excellent free tier, which includes unlimited bandwidth, 100,000 function invocations per day, allowance for commercial use, and no unexpected charges when you exceed the limits.
+> [!IMPORTANT]
+> For hobby projects: We recommend Cloudflare Pages due to its excellent free tier, which includes unlimited bandwidth, 100,000 function invocations per day, allowance for commercial use, and no unexpected charges when you exceed the limits.
 > Vercel and Deno Deploy are another great options, though their free tier is more restrictive, offering 100 GB of bandwidth and 1 million function invocations per month. They similarly avoid overage charges. Vercel's free tier disallows commercial usage.
 > Be cautious with Netlify, as exceeding its free tier will automatically upgrade you to a paid plan, regardless of whether you have registered a credit card.
 
