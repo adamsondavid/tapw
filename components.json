@@ -6,7 +6,6 @@
     "baseColor": "slate"
   },
   "aliases": {
-    "todo": "please check import aliases. Is there a way to use relative paths? Would prefer, since we currently do not allow @/ imports",
     "components": "@/client/components",
     "utils": "@/client/lib/utils"
   }
