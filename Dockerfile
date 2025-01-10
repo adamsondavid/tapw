@@ -10,4 +10,5 @@ RUN npm run build && npm prune --production
 FROM base
 WORKDIR /app
 COPY --from=builder /build ./
+EXPOSE 3000/tcp
 ENTRYPOINT ["node", "--enable-source-maps", "dist/main.js"]
