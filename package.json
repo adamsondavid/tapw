@@ -38,7 +38,7 @@
     "@hono/vite-dev-server": "^0.17.0",
     "@iconify-icons/uil": "^1.2.3",
     "@iconify/vue": "^4.2.0",
-    "@nano-edge/cli": "^1.6.1",
+    "@nano-edge/cli": "^1.7.1",
     "@ts-rest/open-api": "^3.51.0",
     "@types/node": "^22.10.3",
     "@vitejs/plugin-vue": "^5.2.1",
