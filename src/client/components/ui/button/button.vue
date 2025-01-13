@@ -1,10 +1,23 @@
 <script setup lang="ts">
-import { Primitive, type PrimitiveProps } from "radix-vue";
 import { cn } from "../../../lib/utils";
 import { cva } from "class-variance-authority";
-import type { HTMLAttributes } from "vue";
+import type { Component as ComponentType, HTMLAttributes } from "vue";
 
-const buttonVariants = cva(
+type Props = {
+  variant?: NonNullable<Parameters<typeof variants>[0]>["variant"];
+  size?: NonNullable<Parameters<typeof variants>[0]>["size"];
+  as?: string | ComponentType;
+  class?: HTMLAttributes["class"];
+};
+
+const props = withDefaults(defineProps<Props>(), {
+  variant: "default",
+  size: "default",
+  as: "button",
+  class: "",
+});
+
+const variants = cva(
   "inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50",
   {
     variants: {
@@ -25,23 +38,10 @@ const buttonVariants = cva(
     },
   },
 );
-
-type Props = PrimitiveProps & {
-  variant?: NonNullable<Parameters<typeof buttonVariants>[0]>["variant"];
-  size?: NonNullable<Parameters<typeof buttonVariants>[0]>["size"];
-  class?: HTMLAttributes["class"];
-};
-
-const props = withDefaults(defineProps<Props>(), {
-  variant: "default",
-  size: "default",
-  class: undefined,
-  as: "button",
-});
 </script>
 
 <template>
-  <Primitive :as="as" :as-child="asChild" :class="cn(buttonVariants({ variant, size }), props.class)">
+  <component :is="as" :class="cn(variants({ variant, size }), props.class)">
     <slot />
-  </Primitive>
+  </component>
 </template>
