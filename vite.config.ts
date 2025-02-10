@@ -21,7 +21,7 @@ export default defineConfig({
   },
   server: {
     proxy: {
-      "/api": "http://localhost:3000",
+      "^/api|openapi|openapi-spec": "http://localhost:3000",
     },
   },
 });
