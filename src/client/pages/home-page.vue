@@ -27,16 +27,11 @@ const greeting = ref("");
 const loading = ref(false);
 
 watch(name, async (name) => {
-  try {
-    loading.value = true;
-    const { body } = await server.greet({ query: { name: names[name % names.length] } });
-    greeting.value = body;
-  } catch (e) {
-    console.error(e);
-    greeting.value = "some unexpected error occurred 😰";
-  } finally {
-    loading.value = false;
-  }
+  loading.value = true;
+  const { status, body } = await server.greet({ query: { name: names[name % names.length] } });
+  if (status === 200) greeting.value = body;
+  else greeting.value = "some unexpected error occurred 😰";
+  loading.value = false;
 });
 </script>
 
