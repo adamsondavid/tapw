@@ -12,5 +12,10 @@ export function initApi(unvalidatedEnv: unknown) {
 
   const router = initRouter(env.GREETING);
 
-  return createFetchHandler(contract, router, { jsonQuery: true, responseValidation: true, basePath: "/api" });
+  return createFetchHandler(contract, router, {
+    jsonQuery: true,
+    responseValidation: true,
+    basePath: "/api",
+    errorHandler: console.error,
+  });
 }

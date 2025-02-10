@@ -5,7 +5,7 @@
   "author": "David Adamson",
   "type": "module",
   "scripts": {
-    "dev": "concurrently --kill-others \"vite\" \"tsx src/main.dev.ts\"",
+    "dev": "concurrently --kill-others \"vite\" \"tsx --watch src/main.dev.ts\"",
     "check:types": "vue-tsc --noEmit",
     "check:format": "prettier --ignore-path .gitignore --check .",
     "check:lint": "eslint",

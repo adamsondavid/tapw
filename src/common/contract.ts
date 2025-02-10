@@ -14,5 +14,11 @@ export const contract = initContract().router(
       },
     },
   },
-  { strictStatusCodes: true },
+  {
+    strictStatusCodes: true,
+    commonResponses: {
+      400: z.object({ message: z.string() }),
+      500: z.object({ message: z.string() }),
+    },
+  },
 );
