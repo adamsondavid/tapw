@@ -5,9 +5,7 @@ import { initApi } from "./server/main";
 
 const app = new Hono();
 
-app.mount("/api", initApi(process.env), {
-  replaceRequest: (req) => new Request(new URL(req.url), req),
-});
+app.mount("/api", initApi(process.env));
 
 app.use("/assets/*", async (c, next) => {
   await next();

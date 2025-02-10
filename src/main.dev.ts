@@ -4,12 +4,11 @@ import { generateOpenApi } from "@ts-rest/open-api";
 import { contract } from "./common/contract";
 import { swaggerUI } from "@hono/swagger-ui";
 import { Hono } from "hono";
+import { serve } from "@hono/node-server";
 
 const app = new Hono();
 
-app.mount("/api", initApi(process.env), {
-  replaceRequest: (req) => new Request(new URL(req.url), req),
-});
+app.mount("/api", initApi(process.env));
 
 app.get("/openapi", swaggerUI({ url: "/openapi-spec" }));
 app.get("/openapi-spec", (c) =>
@@ -25,4 +24,4 @@ app.get("/openapi-spec", (c) =>
   ),
 );
 
-export default app;
+serve({ fetch: app.fetch, port: 3000 });

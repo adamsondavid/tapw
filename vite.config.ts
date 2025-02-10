@@ -2,7 +2,6 @@ import { defineConfig } from "vite";
 import autoprefixer from "autoprefixer";
 import tailwind from "tailwindcss";
 import vue from "@vitejs/plugin-vue";
-import devServer from "@hono/vite-dev-server";
 import { fileURLToPath, URL } from "node:url";
 
 export default defineConfig({
@@ -14,16 +13,15 @@ export default defineConfig({
       plugins: [tailwind(), autoprefixer()],
     },
   },
-  plugins: [
-    vue(),
-    devServer({
-      entry: "src/main.dev.ts",
-      exclude: [/^(?!\/(api|openapi)).*/],
-    }),
-  ],
+  plugins: [vue()],
   resolve: {
     alias: {
       "@": fileURLToPath(new URL("./src", import.meta.url)),
+    },
+  },
+  server: {
+    proxy: {
+      "/api": "http://localhost:3000",
     },
   },
 });
