@@ -8,7 +8,9 @@ import { serve } from "@hono/node-server";
 
 const app = new Hono();
 
-app.mount("/api", initApi(process.env));
+app.mount("/api", initApi(process.env), {
+  replaceRequest: (req) => new Request(new URL(req.url), req),
+});
 
 app.get("/openapi", swaggerUI({ url: "/openapi-spec" }));
 app.get("/openapi-spec", (c) =>
