@@ -24,7 +24,7 @@
     "@hono/node-server": "^1.15.0",
     "@ts-rest/core": "^3.52.1",
     "@ts-rest/serverless": "^3.52.1",
-    "hono": "^4.8.3",
+    "hono": "^4.9.6",
     "zod": "^3.25.67"
   },
   "devDependencies": {
