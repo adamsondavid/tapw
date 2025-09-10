@@ -2,7 +2,7 @@ FROM node:22-alpine as base
 
 FROM base as builder
 WORKDIR /build
-COPY package*.json .npmrc ./
+COPY package*.json ./
 RUN npm ci --prefer-offline --no-audit
 COPY . .
 RUN npm run build && npm prune --production
