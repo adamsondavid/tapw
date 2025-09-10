@@ -17,6 +17,9 @@
     "build:cloudflare": "vite build && esbuild src/main.prod.cloudflare.ts --bundle --minify --platform=neutral --outfile=functions/api/[[catchall]].js",
     "build:deno": "vite build && esbuild src/main.prod.deno.ts --bundle --minify --platform=neutral --outfile=dist/main.js"
   },
+  "engines": {
+    "node": "22.x"
+  },
   "dependencies": {
     "@hono/node-server": "^1.15.0",
     "@ts-rest/core": "^3.52.1",
