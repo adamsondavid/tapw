@@ -33,7 +33,7 @@
     "@iconify-icons/uil": "^1.2.3",
     "@iconify/vue": "^5.0.0",
     "@ts-rest/open-api": "^3.52.1",
-    "@types/node": "^24.0.10",
+    "@types/node": "^22.18.1",
     "@vitejs/plugin-vue": "^6.0.0",
     "autoprefixer": "^10.4.21",
     "class-variance-authority": "^0.7.1",
