@@ -15,7 +15,7 @@
     "build:vercel": "vite build",
     "build:netlify": "vite build && esbuild src/main.prod.netlify.ts --bundle --minify --platform=neutral --outfile=netlify/edge-functions/index.js",
     "build:cloudflare": "vite build && esbuild src/main.prod.cloudflare.ts --bundle --minify --platform=neutral --outfile=functions/api/[[catchall]].js",
-    "build:deno": "vite build && esbuild src/main.prod.deno.ts --bundle --minify --platform=neutral --outfile=dist/main.js"
+    "build:deno": "vite build && esbuild src/main.prod.deno.ts --bundle --minify --platform=node --outfile=dist/main.js"
   },
   "engines": {
     "node": "22.x"
