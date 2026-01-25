@@ -1,7 +1,6 @@
 {
   "style": "new-york",
   "tailwind": {
-    "config": "tailwind.config.ts",
     "css": "src/client/main.css",
     "baseColor": "slate"
   },
