@@ -6,7 +6,7 @@ Build modern fullstack Vue apps with **end-to-end typesafety** and a focus on **
 
 ## Overview
 
-`tapwater` is an opinionated fullstack template designed to jumpstart your development with minimal setup. It provides a robust stack that prioritizes performance, scalability, and an optimal developer workflow. Whether you're deploying to serverless environments like Vercel, Netlify, or Cloudflare Pages, or spinning up a Docker container in the cloud, `tapwater` has you covered.
+`tapwater` is an opinionated fullstack template designed to jumpstart your development with minimal setup. It provides a robust stack that prioritizes performance, scalability, and an optimal developer workflow. Whether you're deploying to serverless environments like Vercel, Netlify, or Cloudflare, or spinning up a Docker container in the cloud, `tapwater` has you covered.
 
 Fork, modify, and make it your own! ⚙️
 
@@ -18,7 +18,7 @@ Fork, modify, and make it your own! ⚙️
 - **End-to-end typesafety** with TypeScript and **ts-rest** across both the frontend and backend.
 - **Cypress** for robust e2e testing.
 - Focus on **DX**: fast local development and seamless deployments.
-- Optimized for **serverless platforms** like Cloudflare Pages, Vercel Edge, Deno Deploy and Netlify. Easy **Docker** deployment for environments that support containers.
+- Optimized for **serverless platforms** like Cloudflare, Vercel, Deno Deploy and Netlify. Easy **Docker** deployment for environments that support containers.
 
 ## ⚠️ Limitations
 
@@ -29,21 +29,21 @@ Please do not use this template in production if you care about features like SE
 
 ### First-Class Support:
 
-- **Cloudflare Pages**
-- **Vercel Edge**
+- **Cloudflare**
+- **Vercel**
 
 ### Other Supported Environments:
 
 - **Deno Deploy**
 - **Netlify**
-- **Heroku-like Platforms**: Works with platforms that follow Heroku’s conventions (e.g. `npm run ci && npm run build`, followed by `npm run start`).
+- **Heroku-like Platforms**: Works with platforms that follow Heroku's conventions (e.g. `npm run ci && npm run build`, followed by `npm run start`).
 - **Docker**: Package and deploy anywhere Docker runs.
 
 > [!NOTE]
 > Providers like AWS Lambda, GCP CloudFunctions, and Azure Serverless Functions are not supported out of the box since they require additional configuration to target their specific environments. For most use cases, Cloudflare, Vercel, Deno Deploy and Netlify offer the best DX out of the box.
 
 > [!IMPORTANT]
-> For hobby projects: We recommend Cloudflare Pages due to its excellent free tier, which includes unlimited bandwidth, 100,000 function invocations per day, allowance for commercial use, and no unexpected charges when you exceed the limits.
+> For hobby projects: We recommend Cloudflare due to its excellent free tier, which includes unlimited bandwidth, 100,000 function invocations per day, allowance for commercial use, and no unexpected charges when you exceed the limits.
 > Vercel and Deno Deploy are another great options, though their free tier is more restrictive, offering 100 GB of bandwidth and 1 million function invocations per month. They similarly avoid overage charges. Vercel's free tier disallows commercial usage.
 > Be cautious with Netlify, as exceeding its free tier will automatically upgrade you to a paid plan, regardless of whether you have registered a credit card.
 
@@ -51,8 +51,8 @@ Please do not use this template in production if you care about features like SE
 
 Check out `tapwater` in action across various providers:
 
-- [Cloudflare Pages](https://tapw.pages.dev)
-- [Vercel Edge](https://tapw.vercel.app)
+- [Cloudflare](https://tapw.pages.dev)
+- [Vercel](https://tapw.vercel.app)
 - [Deno Deploy](https://tapw.deno.dev)
 
 ## 🚀 Get Started
@@ -61,7 +61,7 @@ Check out `tapwater` in action across various providers:
 2. **Clone the repo**: `git clone git@github.com:your-username/your-repo.git && cd your-repo`
 3. **Install dependencies**: `npm install`
 4. **Develop locally**: `npm run dev`
-5. **Deploy**: Login to Cloudflare Pages, Vercel, Deno Deploy, Netlify or Heroku(-like) and import the project. The platforms should recognize all config parameters automatically. If you want to deploy the application as container, checkout our [Dockerfile](Dockerfile).
+5. **Deploy**: Login to Cloudflare, Vercel, Deno Deploy, Netlify or Heroku(-like) and import the project. The platforms should recognize all config parameters automatically. If you want to deploy the application as container, checkout our [Dockerfile](Dockerfile).
 
 ## 📄 License
 
