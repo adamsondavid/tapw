@@ -6,9 +6,10 @@
   "type": "module",
   "scripts": {
     "dev": "concurrently --kill-others \"vite\" \"tsx watch src/main.dev.ts\"",
-    "check:types": "vue-tsc --noEmit",
+    "format": "prettier --ignore-path .gitignore --write .",
     "check:format": "prettier --ignore-path .gitignore --check .",
     "check:lint": "eslint",
+    "check:types": "vue-tsc --noEmit",
     "test:e2e": "cypress run --browser chrome",
     "build": "vite build && esbuild src/main.prod.ts --bundle --minify --sourcemap --platform=node --format=esm --packages=external --outfile=dist/main.js",
     "start": "node --enable-source-maps dist/main.js",
