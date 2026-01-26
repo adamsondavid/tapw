@@ -1,25 +1,25 @@
-import globals from "globals";
-import pluginJs from "@eslint/js";
-import tseslint from "typescript-eslint";
-import pluginVue from "eslint-plugin-vue";
-import eslintConfigPrettier from "eslint-config-prettier";
-import pluginCypress from "eslint-plugin-cypress/flat";
-import { includeIgnoreFile } from "@eslint/compat";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { defineConfig } from "eslint/config";
+import { includeIgnoreFile } from "@eslint/compat";
+import globals from "globals";
+import pluginJs from "@eslint/js";
+import tsEslint from "typescript-eslint";
+import pluginVue from "eslint-plugin-vue";
+import pluginCypress from "eslint-plugin-cypress/flat";
+import eslintConfigPrettier from "eslint-config-prettier";
 
-/** @type {import('eslint').Linter.Config[]} */
-export default [
+export default defineConfig([
   includeIgnoreFile(path.resolve(path.dirname(fileURLToPath(import.meta.url)), ".gitignore")),
   {
     files: ["**/*.{js,mjs,cjs,ts,vue}"],
     languageOptions: {
       globals: { ...globals.browser, ...globals.node },
-      parserOptions: { parser: tseslint.parser },
+      parserOptions: { parser: tsEslint.parser },
     },
   },
   pluginJs.configs.recommended,
-  ...tseslint.configs.recommended,
+  ...tsEslint.configs.recommended,
   ...pluginVue.configs["flat/essential"],
   pluginCypress.configs.recommended,
   {
@@ -31,4 +31,4 @@ export default [
     },
   },
   eslintConfigPrettier,
-];
+]);
