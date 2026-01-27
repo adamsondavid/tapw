@@ -8,7 +8,7 @@ export default defineHandler((event) => {
   // access cloudflare bindings if needed, wrap them in you own abstraction and them inject them into createApp
   // const myBinding = event.context.cloudflare.MY_BINDING;
   // ...
-  console.log("received event", event);
+  console.log("received event");
   app ??= createApp(EnvSchema.parse(process.env));
   return app.fetch(event.req);
 });
