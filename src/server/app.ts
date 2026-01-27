@@ -3,6 +3,8 @@ import { createFetchHandler, tsr } from "@ts-rest/serverless/fetch";
 import { type Env } from "./env";
 
 export function createApp(env: Env) {
+  console.log("in createApp. is this a coldstart?");
+
   const greeting = env.GREETING;
 
   const app = tsr.router(contract, {
