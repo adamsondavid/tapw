@@ -11,7 +11,7 @@ export default defineConfig({
     serverEntry: "src/server/main.ts",
     compatibilityDate: "2026-01-27",
     cloudflare: {
-      deployConfig: true, // TODO: check if this still allows setting env vars
+      deployConfig: false, // TODO: check if this still allows setting env vars
       nodeCompat: true,
     },
     vercel: {
