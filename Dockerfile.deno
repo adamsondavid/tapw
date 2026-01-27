@@ -1,0 +1,12 @@
+FROM node:lts-alpine AS builder
+WORKDIR /build
+COPY package*.json ./
+RUN npm ci
+COPY . .
+RUN NITRO_PRESET=deno_server npm run build
+
+FROM denoland/deno:alpine-2.6.6
+WORKDIR /app
+COPY --from=builder /build/.output ./.output
+EXPOSE 3000/tcp
+ENTRYPOINT ["deno", "run", "--allow-all", ".output/server/index.mjs"]

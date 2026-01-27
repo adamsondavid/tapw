@@ -5,50 +5,35 @@ on:
   pull_request:
 
 jobs:
-  check-types:
+  check:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        command:
+          - check:format
+          - check:lint
+          - check:types
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
         with:
-          node-version: 22.x
-      - run: npm ci --prefer-offline --no-audit
-      - run: npm run check:types
-  check-format:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 22.x
-      - run: npm ci --prefer-offline --no-audit
-      - run: npm run check:format
-  check-lint:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 22.x
-      - run: npm ci --prefer-offline --no-audit
-      - run: npm run check:lint
+          node-version: lts/*
+      - run: npm ci
+      - run: npm run ${{ matrix.command }}
   test-e2e:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 22.x
-      - uses: cypress-io/github-action@v5
+      - uses: actions/checkout@v6
+      - uses: cypress-io/github-action@v7
         with:
           start: npm run dev
-      - uses: actions/upload-artifact@v4
-        if: ${{ always() }}
+      - uses: actions/upload-artifact@v6
         with:
           path: cypress/videos
           retention-days: 1
-      - uses: actions/upload-artifact@v4
-        if: ${{ always() }}
+          if-no-files-found: ignore
+      - uses: actions/upload-artifact@v6
         with:
           path: cypress/screenshots
           retention-days: 1
+          if-no-files-found: ignore

@@ -4,6 +4,6 @@ export default defineConfig({
   e2e: {
     supportFile: false,
     experimentalStudio: true,
-    baseUrl: "http://localhost:5173",
+    baseUrl: "http://localhost:3000",
   },
 });
