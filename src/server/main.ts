@@ -1,21 +1,13 @@
-import { z } from "zod";
-import { initRouter } from "./router";
-import { contract } from "../common/contract";
-import { createFetchHandler } from "@ts-rest/serverless/fetch";
+import { defineHandler } from "nitro/h3";
+import { createApp } from "./app";
+import { EnvSchema } from "@/server/env";
 
-const Env = z.object({
-  GREETING: z.string().optional(),
+let app;
+
+export default defineHandler((event) => {
+  // access cloudflare bindings if needed, wrap them in you own abstraction and them inject them into createApp
+  // const myBinding = event.context.cloudflare.MY_BINDING;
+  // ...
+  app ??= createApp(EnvSchema.parse(process.env));
+  return app.fetch(event.req);
 });
-
-export function initApi(unvalidatedEnv: unknown) {
-  const env = Env.parse(unvalidatedEnv);
-
-  const router = initRouter(env.GREETING);
-
-  return createFetchHandler(contract, router, {
-    jsonQuery: true,
-    responseValidation: true,
-    basePath: "/api",
-    errorHandler: console.error,
-  });
-}

@@ -28,5 +28,7 @@ coverage
 *.sln
 *.sw?
 
-netlify
-functions
+.output
+.nitro
+
+.env
