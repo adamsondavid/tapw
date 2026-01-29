@@ -11,7 +11,8 @@ export default defineConfig({
     serverEntry: "src/server/main.ts",
     compatibilityDate: "2026-01-27",
     cloudflare: {
-      deployConfig: false, // manually configured in wrangler.json
+      deployConfig: true,
+      nodeCompat: true,
     },
     vercel: {
       functions: {
