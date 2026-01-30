@@ -3,13 +3,12 @@ import { zValidator } from "@hono/zod-validator";
 import { z } from "zod";
 import { type Env } from "./env";
 
+export type AppType = ReturnType<typeof createApp>;
+
 export function createApp(env: Env) {
-  console.log("in createApp. is this a coldstart?");
+  const greeting = env.GREETING ?? "Hello";
 
-  const greeting = env.GREETING;
-
-  // Define routes by chaining them - required for proper RPC type inference
-  const app = new Hono().basePath("/api").get(
+  return new Hono().get(
     "/greeting",
     zValidator(
       "query",
@@ -18,13 +17,8 @@ export function createApp(env: Env) {
       }),
     ),
     (c) => {
-      const { name } = c.req.valid("query");
-      return c.json({ message: `${greeting ?? "Hello"} ${name}` });
+      const query = c.req.valid("query");
+      return c.json({ message: `${greeting} ${query.name}` });
     },
   );
-
-  return app;
 }
-
-// Export the routes type for the RPC client
-export type AppType = ReturnType<typeof createApp>;

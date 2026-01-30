@@ -14,7 +14,7 @@ const loading = ref(false);
 
 watch(name, async (name) => {
   loading.value = true;
-  const res = await server.api.greeting.$get({ query: { name: names[name % names.length] } });
+  const res = await server.greeting.$get({ query: { name: names[name % names.length] } });
   if (res.ok) {
     const data = await res.json();
     greeting.value = data.message;
