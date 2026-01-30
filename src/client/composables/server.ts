@@ -1,11 +1,5 @@
-import { initClient } from "@ts-rest/core";
-import { contract } from "../../common/contract";
+import { hc } from "hono/client";
+import type { AppType } from "@/server/app";
 
-const server = initClient(contract, {
-  baseUrl: "/api",
-  baseHeaders: {},
-  throwOnUnknownStatus: true,
-  jsonQuery: true,
-  validateResponse: true,
-});
-export const useServer = () => server;
+const client = hc<AppType>("/server");
+export const useServer = () => client;
