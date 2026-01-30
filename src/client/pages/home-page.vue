@@ -14,9 +14,13 @@ const loading = ref(false);
 
 watch(name, async (name) => {
   loading.value = true;
-  const { status, body } = await server.greet({ query: { name: names[name % names.length] } });
-  if (status === 200) greeting.value = body;
-  else greeting.value = "some unexpected error occurred 😰";
+  const res = await server.api.greeting.$get({ query: { name: names[name % names.length] } });
+  if (res.ok) {
+    const data = await res.json();
+    greeting.value = data.message;
+  } else {
+    greeting.value = "some unexpected error occurred 😰";
+  }
   loading.value = false;
 });
 </script>

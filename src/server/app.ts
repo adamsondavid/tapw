@@ -1,5 +1,6 @@
-import { contract } from "../common/contract";
-import { createFetchHandler, tsr } from "@ts-rest/serverless/fetch";
+import { Hono } from "hono";
+import { zValidator } from "@hono/zod-validator";
+import { z } from "zod";
 import { type Env } from "./env";
 
 export function createApp(env: Env) {
@@ -7,22 +8,23 @@ export function createApp(env: Env) {
 
   const greeting = env.GREETING;
 
-  const app = tsr.router(contract, {
-    async greet({ query }) {
-      return { status: 200, body: `${greeting ?? "Hello"} ${query.name}` };
+  // Define routes by chaining them - required for proper RPC type inference
+  const app = new Hono().basePath("/api").get(
+    "/greeting",
+    zValidator(
+      "query",
+      z.object({
+        name: z.string(),
+      }),
+    ),
+    (c) => {
+      const { name } = c.req.valid("query");
+      return c.json({ message: `${greeting ?? "Hello"} ${name}` });
     },
-  });
+  );
 
-  return {
-    handler: createFetchHandler(contract, app, {
-      jsonQuery: true,
-      responseValidation: true,
-      basePath: "/api",
-      errorHandler: console.error,
-    }),
-    fetch(req: Request) {
-      if (!new URL(req.url).pathname.startsWith("/api")) return new Response("Not Found", { status: 404 });
-      return this.handler(new Request(new URL(req.url), req));
-    },
-  };
+  return app;
 }
+
+// Export the routes type for the RPC client
+export type AppType = ReturnType<typeof createApp>;
