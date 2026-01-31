@@ -4,5 +4,5 @@ import { EnvSchema } from "@/server/env";
 import { CloudflareAdapter } from "elysia/adapter/cloudflare-worker";
 
 export default new Elysia({ prefix: "/server", adapter: CloudflareAdapter })
-  .use(createApp(EnvSchema.parse({ GREETING: "yo" })))
+  .use(createApp(EnvSchema.parse(process.env)))
   .compile();
