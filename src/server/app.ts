@@ -5,7 +5,7 @@ import { type Env } from "./env";
 export type App = ReturnType<typeof createApp>;
 
 export function createApp(env: Env) {
-  const greeting = env.GREETING ?? "Hello";
+  const greeting = env.GREETING;
 
   return new Elysia().get(
     "/greeting",
