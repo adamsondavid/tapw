@@ -1,5 +1,5 @@
-import { treaty } from "@elysiajs/eden";
-import type { App } from "@/server/app";
+import { hc } from "hono/client";
+import type { AppType } from "@/server/app";
 
-const client = treaty<App>(`${window.location.origin}/server`);
+const client = hc<AppType>("/server");
 export const useServer = () => client;
