@@ -1,24 +1,24 @@
-import { Hono } from "hono";
-import { zValidator } from "@hono/zod-validator";
+import { Elysia } from "elysia";
 import { z } from "zod";
 import { type Env } from "./env";
-
-export type AppType = ReturnType<typeof createApp>;
 
 export function createApp(env: Env) {
   const greeting = env.GREETING ?? "Hello";
 
-  return new Hono().get(
+  return new Elysia().get(
     "/greeting",
-    zValidator(
-      "query",
-      z.object({
+    ({ query }) => {
+      return { message: `${greeting} ${query.name}` };
+    },
+    {
+      query: z.object({
         name: z.string(),
       }),
-    ),
-    (c) => {
-      const query = c.req.valid("query");
-      return c.json({ message: `${greeting} ${query.name}` });
+      response: z.object({
+        message: z.string(),
+      }),
     },
   );
 }
+
+export type App = ReturnType<typeof createApp>;
