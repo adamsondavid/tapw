@@ -5,7 +5,7 @@ import { type Env } from "./env";
 export function createApp(env: Env) {
   const greeting = env.GREETING ?? "Hello";
 
-  return new Elysia().get(
+  return new Elysia({ prefix: "/server" }).get(
     "/greeting",
     ({ query }) => {
       return { message: `${greeting} ${query.name}` };
