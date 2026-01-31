@@ -14,11 +14,11 @@ const loading = ref(false);
 
 watch(name, async (name) => {
   loading.value = true;
-  const { data, error } = await server.greeting.get({ query: { name: names[name % names.length] } });
-  if (data) {
-    greeting.value = data.message;
+  const res = await server.greeting.get({ query: { name: names[name % names.length] } });
+  if (res.data) {
+    greeting.value = res.data.message;
   } else {
-    greeting.value = `some unexpected error occurred: ${error?.value} 😰`;
+    greeting.value = `some unexpected error occurred 😰`;
   }
   loading.value = false;
 });
