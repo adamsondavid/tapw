@@ -18,7 +18,7 @@ watch(name, async (name) => {
   if (res.data) {
     greeting.value = res.data.message;
   } else {
-    greeting.value = `some unexpected error occurred 😰`;
+    greeting.value = "some unexpected error occurred 😰";
   }
   loading.value = false;
 });
