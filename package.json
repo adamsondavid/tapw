@@ -31,7 +31,7 @@
     "eslint-plugin-cypress": "^7.0.2",
     "eslint-plugin-vue": "^10.12.0",
     "globals": "^17.13.0",
-    "hono": "^4.13.14",
+    "hono": "^4.13.18",
     "lucide-vue-next": "^1.0.0",
     "nitro": "^3.0.260610-beta",
     "prettier": "^3.9.10",
